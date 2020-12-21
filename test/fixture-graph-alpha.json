@@ -1,0 +1,104 @@
+{
+    "attributeMetadataList": [
+        {
+            "id": "1",
+            "name": "Speed",
+            "alternateName": "",
+            "unitText": "km/h",
+            "tagSet": ["alpha", "beta"]
+        },
+        {
+            "id": "2",
+            "name": "Real Range",
+            "alternateName": "Range",
+            "unitText": "km",
+            "tagSet": ["zeta"]
+        },
+        {
+            "id": "3",
+            "name": "Cost per km",
+            "alternateName": "",
+            "unitText": "GBP",
+            "tagSet": ["alpha"]
+        },
+        {
+            "id": "4",
+            "name": "Name",
+            "alternateName": "",
+            "unitText": "",
+            "tagSet": ["alpha"]
+        }
+    ],
+    "nodeList": [
+        {
+            "id": "1",
+            "attributeList": [
+                {
+                    "id": "4",
+                    "value": "car",
+                    "optionalValueList": [],
+                    "tagSet": ["alpha"]
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "attributeList": [
+                {
+                    "id": "4",
+                    "value": "plane",
+                    "optionalValueList": [],
+                    "tagSet": []
+                }
+            ]
+        },
+        {
+            "id": "10",
+            "attributeList": [
+                {
+                    "id": "4",
+                    "value": "gold",
+                    "optionalValueList": [],
+                    "tagSet": []
+                }
+            ]
+        },
+        {
+            "id": "11",
+            "attributeList": [
+                {
+                    "id": "4",
+                    "value": "silver",
+                    "optionalValueList": [],
+                    "tagSet": []
+                }
+            ]
+        }
+    ],
+    "edgeList": [
+        {
+            "fromNode": "1",
+            "toNode": "10",
+            "attributeList": [
+                {
+                    "id": "1",
+                    "value": "100",
+                    "optionalValueList": [],
+                    "tagSet": ["alpha", "delta"]
+                }
+            ]
+        },
+        {
+            "fromNode": "1",
+            "toNode": "11",
+            "attributeList": [
+                {
+                    "id": "1",
+                    "value": "150",
+                    "optionalValueList": [],
+                    "tagSet": ["alpha"]
+                }
+            ]
+        }
+    ]
+}

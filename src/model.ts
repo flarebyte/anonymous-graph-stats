@@ -1,16 +1,16 @@
 interface AttributeMetadata {
   id: string;
-  description: string;
-  alternateDescriptionList: string[];
+  name: string;
+  alternateName: string;
   unitText: string;
-  tagSet: String[];
+  tagSet: string[];
 }
 
 interface Attribute {
   id: string;
   value: string;
   optionalValueList: string[];
-  tagSet: String[];
+  tagSet: string[];
 }
 
 interface Node {
@@ -29,3 +29,33 @@ interface Graph {
   nodeList: Node[];
   edgeList: Edge[];
 }
+
+interface StatsNameValue {
+  name: string;
+  value: number;
+}
+
+interface StatsNameValueMap {
+  [name: string]: number;
+}
+
+interface StatsData {
+  name: string;
+  values: StatsNameValue[];
+}
+
+interface StatsContext {
+  supportedTags: string[];
+}
+
+export {
+  AttributeMetadata,
+  Attribute,
+  Node,
+  Edge,
+  Graph,
+  StatsData,
+  StatsContext,
+  StatsNameValue,
+  StatsNameValueMap,
+};
