@@ -48,7 +48,7 @@
                     "id": "4",
                     "value": "plane",
                     "optionalValueList": [],
-                    "tagSet": []
+                    "tagSet": ["alpha", "echo"]
                 }
             ]
         },

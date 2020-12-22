@@ -17,12 +17,16 @@ interface Attribute extends Taggable {
   tagSet: string[];
 }
 
-interface Node {
+interface WithAttributeList {
+  attributeList: Attribute[];
+}
+
+interface Node extends WithAttributeList {
   id: string;
   attributeList: Attribute[];
 }
 
-interface Edge {
+interface Edge extends WithAttributeList {
   fromNode: string;
   toNode: string;
   attributeList: Attribute[];
@@ -54,6 +58,7 @@ interface StatsContext {
 
 export {
   Taggable,
+  WithAttributeList,
   AttributeMetadata,
   Attribute,
   Node,

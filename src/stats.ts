@@ -17,9 +17,9 @@ import {
 // percentile low, high, median for array size for alternateDescriptionList, optionalValueList
 
 const nameConst = {
-  nodesCount: 'nodes count',
-  edgesCount: 'edges count',
-  attributeMetadataCount: 'attribute-metas count',
+  nodeTagsCount: 'node tags count',
+  edgeTagsCount: 'edge tags count',
+  attributeMetadataTagsCount: 'attribute-metadata tags count',
 };
 
 const intersection = (a: Set<string>, b: Set<string>) =>
@@ -65,12 +65,17 @@ const countTagsInList = (
 
 const countByTags = (ctx: StatsContext, graph: Graph): StatsData[] => {
   const supportedTags = new Set<string>(ctx.supportedTags);
-  const statsMetaData = countTagsInList(
-    nameConst.attributeMetadataCount,
+  const metaStats = countTagsInList(
+    nameConst.attributeMetadataTagsCount,
     supportedTags,
     graph.attributeMetadataList
   );
-  return [statsMetaData];
+  const nodeStats = countTagsInList(
+    nameConst.nodeTagsCount,
+    supportedTags,
+    graph.nodeList.flatMap(n => n.attributeList)
+  );
+  return [metaStats, nodeStats];
 };
 
 const getStats = (): StatsData[] => {
