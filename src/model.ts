@@ -1,4 +1,8 @@
-interface AttributeMetadata {
+interface Taggable {
+  tagSet: string[];
+}
+
+interface AttributeMetadata extends Taggable {
   id: string;
   name: string;
   alternateName: string;
@@ -6,7 +10,7 @@ interface AttributeMetadata {
   tagSet: string[];
 }
 
-interface Attribute {
+interface Attribute extends Taggable {
   id: string;
   value: string;
   optionalValueList: string[];
@@ -49,6 +53,7 @@ interface StatsContext {
 }
 
 export {
+  Taggable,
   AttributeMetadata,
   Attribute,
   Node,

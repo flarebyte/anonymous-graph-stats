@@ -1,4 +1,11 @@
-import { Graph, StatsData, StatsContext, StatsNameValueMap } from './model';
+import {
+  Graph,
+  StatsData,
+  StatsContext,
+  StatsNameValue,
+  StatsNameValueMap,
+  Taggable,
+} from './model';
 
 // count of nodes/edges/attributes
 // count of letters, count of range of letters (name, number), count of words
@@ -31,19 +38,38 @@ const tagCounter = (tagCounter: StatsNameValueMap, tagSet: string[]) => {
   tagSet.map(t => (tagCounter[t] += 1));
   return tagCounter;
 };
+
+const toStatsNameValueList = (
+  tagCounter: StatsNameValueMap
+): StatsNameValue[] =>
+  Object.entries(tagCounter)
+    .filter(v => v[1] > 0)
+    .map(v => ({ name: v[0], value: v[1] }));
+
+const extractTagSet = (list: Taggable[]): string[][] => list.map(a => a.tagSet);
+
+const countTagsInList = (
+  name: string,
+  supportedTags: Set<string>,
+  list: Taggable[]
+): StatsData => {
+  const uniqList = extractTagSet(list).map(a =>
+    uniqAndSupportedTags(a, supportedTags)
+  );
+  const stats = uniqList.reduce(tagCounter, initCounter(supportedTags));
+  return {
+    name,
+    values: toStatsNameValueList(stats),
+  };
+};
+
 const countByTags = (ctx: StatsContext, graph: Graph): StatsData[] => {
   const supportedTags = new Set<string>(ctx.supportedTags);
-  const metaTagSet = graph.attributeMetadataList.map(a =>
-    uniqAndSupportedTags(a.tagSet, supportedTags)
+  const statsMetaData = countTagsInList(
+    nameConst.attributeMetadataCount,
+    supportedTags,
+    graph.attributeMetadataList
   );
-  const statsMeta = metaTagSet.reduce(tagCounter, initCounter(supportedTags));
-  const statsMetaData: StatsData = {
-    name: nameConst.attributeMetadataCount,
-    values: Object.entries(statsMeta)
-      .filter(v => v[1] > 0)
-      .map(v => ({ name: v[0], value: v[1] })),
-  };
-
   return [statsMetaData];
 };
 
