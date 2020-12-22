@@ -19,6 +19,13 @@ describe('count by tags', () => {
         name: 'node tags count',
         values: [{ name: 'alpha', value: 2 }],
       },
+      {
+        name: 'edge tags count',
+        values: [
+          { name: 'alpha', value: 2 },
+          { name: 'delta', value: 1 },
+        ],
+      },
     ];
     expect(actual).toEqual(expected);
   });

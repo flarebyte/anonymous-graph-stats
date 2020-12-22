@@ -75,7 +75,12 @@ const countByTags = (ctx: StatsContext, graph: Graph): StatsData[] => {
     supportedTags,
     graph.nodeList.flatMap(n => n.attributeList)
   );
-  return [metaStats, nodeStats];
+  const edgeStats = countTagsInList(
+    nameConst.edgeTagsCount,
+    supportedTags,
+    graph.edgeList.flatMap(n => n.attributeList)
+  );
+  return [metaStats, nodeStats, edgeStats];
 };
 
 const getStats = (): StatsData[] => {
