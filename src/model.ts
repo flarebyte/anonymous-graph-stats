@@ -54,6 +54,7 @@ interface StatsData {
 
 interface StatsContext {
   supportedTags: string[];
+  supportedUnits: string[];
 }
 
 export {

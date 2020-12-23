@@ -20,12 +20,13 @@ const nameConst = {
   nodeTagsCount: 'node tags count',
   edgeTagsCount: 'edge tags count',
   attributeMetadataTagsCount: 'attribute-metadata tags count',
+  attributeMetadataUnitsCount: 'attribute-metadata units count',
 };
 
 const intersection = (a: Set<string>, b: Set<string>) =>
   new Set([...a].filter(x => b.has(x)));
 
-const uniqAndSupportedTags = (tags: string[], suppported: Set<string>) => [
+const uniqAndSupported = (tags: string[], suppported: Set<string>) => [
   ...intersection(new Set(tags), suppported),
 ];
 
@@ -34,9 +35,14 @@ const initCounter = (suppported: Set<string>): StatsNameValueMap => {
   suppported.forEach(s => (result[s] = 0));
   return result;
 };
-const tagCounter = (tagCounter: StatsNameValueMap, tagSet: string[]) => {
-  tagSet.map(t => (tagCounter[t] += 1));
-  return tagCounter;
+const tagCounter = (counter: StatsNameValueMap, tagSet: string[]) => {
+  tagSet.map(t => (counter[t] += 1));
+  return counter;
+};
+
+const categoryCounter = (counter: StatsNameValueMap, category: string) => {
+  counter[category] += 1;
+  return counter;
 };
 
 const toStatsNameValueList = (
@@ -54,7 +60,7 @@ const countTagsInList = (
   list: Taggable[]
 ): StatsData => {
   const uniqList = extractTagSet(list).map(a =>
-    uniqAndSupportedTags(a, supportedTags)
+    uniqAndSupported(a, supportedTags)
   );
   const stats = uniqList.reduce(tagCounter, initCounter(supportedTags));
   return {
@@ -83,8 +89,20 @@ const countByTags = (ctx: StatsContext, graph: Graph): StatsData[] => {
   return [metaStats, nodeStats, edgeStats];
 };
 
+const countByUnitText = (ctx: StatsContext, graph: Graph): StatsData => {
+  const supportedUnitsSet = new Set(ctx.supportedUnits);
+  const units: string[] = graph.attributeMetadataList
+    .map(m => m.unitText.trim())
+    .filter(u => supportedUnitsSet.has(u));
+  const stats = units.reduce(categoryCounter, initCounter(new Set(units)));
+  return {
+    name: nameConst.attributeMetadataUnitsCount,
+    values: toStatsNameValueList(stats),
+  };
+};
+
 const getStats = (): StatsData[] => {
   return [];
 };
 
-export { countByTags, getStats };
+export { countByTags, countByUnitText, getStats };

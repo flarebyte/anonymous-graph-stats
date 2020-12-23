@@ -27,6 +27,13 @@
             "alternateName": "",
             "unitText": "",
             "tagSet": ["alpha"]
+        },
+        {
+            "id": "5",
+            "name": "Cost per journey",
+            "alternateName": "",
+            "unitText": "GBP",
+            "tagSet": []
         }
     ],
     "nodeList": [

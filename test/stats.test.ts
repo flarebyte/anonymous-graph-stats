@@ -1,11 +1,14 @@
-import { countByTags } from '../src/stats';
+import { countByTags, countByUnitText } from '../src/stats';
 import { Graph, StatsContext } from '../src/model';
 
 const fixtureAlpha: Graph = require('./fixture-graph-alpha.json');
 
 describe('count by tags', () => {
-  it('works', () => {
-    const ctx: StatsContext = { supportedTags: ['alpha', 'beta', 'delta'] };
+  it('count tags for each metadata, nodes and edges', () => {
+    const ctx: StatsContext = {
+      supportedTags: ['alpha', 'beta', 'delta'],
+      supportedUnits: [],
+    };
     const actual = countByTags(ctx, fixtureAlpha);
     const expected = [
       {
@@ -27,6 +30,24 @@ describe('count by tags', () => {
         ],
       },
     ];
+    expect(actual).toEqual(expected);
+  });
+});
+
+describe('count by unit text', () => {
+  it('count units for each metadata', () => {
+    const ctx: StatsContext = {
+      supportedTags: [],
+      supportedUnits: ['km', 'GBP'],
+    };
+    const actual = countByUnitText(ctx, fixtureAlpha);
+    const expected = {
+      name: 'attribute-metadata units count',
+      values: [
+        { name: 'km', value: 1 },
+        { name: 'GBP', value: 2 },
+      ],
+    };
     expect(actual).toEqual(expected);
   });
 });
