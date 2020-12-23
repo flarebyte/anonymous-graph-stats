@@ -22,6 +22,7 @@ const nameConst = {
   attributeMetadataTagsCount: 'attribute-metadata tags count',
   attributeMetadataUnitsCount: 'attribute-metadata units count',
   attributeMetadataEmptyCount: 'attribute-metadata empty count',
+  graphCount: 'graph count',
 };
 
 const intersection = (a: Set<string>, b: Set<string>) =>
@@ -134,8 +135,34 @@ const countEmptyMetadata = (graph: Graph): StatsData => {
   };
 };
 
+const countRootGraph = (graph: Graph): StatsData => {
+  return {
+    name: nameConst.graphCount,
+    values: [
+      {
+        name: 'attributeMetadataList',
+        value: graph.attributeMetadataList.length,
+      },
+      {
+        name: 'nodeList',
+        value: graph.nodeList.length,
+      },
+      {
+        name: 'edgeList',
+        value: graph.edgeList.length,
+      },
+    ],
+  };
+};
+
 const getStats = (): StatsData[] => {
   return [];
 };
 
-export { countByTags, countByUnitText, countEmptyMetadata, getStats };
+export {
+  countByTags,
+  countByUnitText,
+  countEmptyMetadata,
+  countRootGraph,
+  getStats,
+};
