@@ -23,6 +23,7 @@ const nameConst = {
   attributeMetadataUnitsCount: 'attribute-metadata units count',
   attributeMetadataEmptyCount: 'attribute-metadata empty count',
   graphCount: 'graph count',
+  attributeCount: 'attribute count',
 };
 
 const intersection = (a: Set<string>, b: Set<string>) =>
@@ -155,6 +156,72 @@ const countRootGraph = (graph: Graph): StatsData => {
   };
 };
 
+const countAttributes = (graph: Graph): StatsData => {
+  const attributeIds = graph.attributeMetadataList.map(a => a.id);
+  const attributeIdsSet = new Set(attributeIds);
+  const countDuplicateAttributeIds = attributeIds.length - attributeIdsSet.size;
+  const attrInNodes = graph.nodeList
+    .flatMap(n => n.attributeList)
+    .map(a => a.id);
+  const attrInNodesSet = new Set(attrInNodes);
+  const attrInEdges = graph.edgeList
+    .flatMap(n => n.attributeList)
+    .map(a => a.id);
+  const attrInEdgeSet = new Set(attrInEdges);
+  const attrAllSet = new Set([...attrInNodesSet, ...attrInEdgeSet]);
+  const unusedAttrsCount = [...attributeIdsSet].filter(
+    id => !attrAllSet.has(id)
+  ).length;
+  const undeclaredAttrsCount = [...attrAllSet].filter(
+    id => !attributeIdsSet.has(id)
+  ).length;
+  const commonAttrsCount = [...attrInNodesSet].filter(id =>
+    attrInEdgeSet.has(id)
+  ).length;
+
+  return {
+    name: nameConst.attributeCount,
+    values: [
+      {
+        name: 'duplicate',
+        value: countDuplicateAttributeIds,
+      },
+      {
+        name: 'unused',
+        value: unusedAttrsCount,
+      },
+      {
+        name: 'declared',
+        value: attributeIds.length,
+      },
+      {
+        name: 'undeclared',
+        value: undeclaredAttrsCount,
+      },
+      {
+        name: 'nodes unique used',
+        value: attrInNodesSet.size,
+      },
+      {
+        name: 'edges unique used',
+        value: attrInEdgeSet.size,
+      },
+      {
+        name: 'nodes edges unique intersection used',
+        value: commonAttrsCount,
+      },
+      {
+        name: 'nodes used',
+        value: attrInNodes.length,
+      },
+      {
+        name: 'edges used',
+        value: attrInEdges.length,
+      },
+    ],
+  };
+};
+
 const getStats = (): StatsData[] => {
   return [];
 };
@@ -164,5 +231,6 @@ export {
   countByUnitText,
   countEmptyMetadata,
   countRootGraph,
+  countAttributes,
   getStats,
 };
