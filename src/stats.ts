@@ -21,6 +21,7 @@ const nameConst = {
   edgeTagsCount: 'edge tags count',
   attributeMetadataTagsCount: 'attribute-metadata tags count',
   attributeMetadataUnitsCount: 'attribute-metadata units count',
+  attributeMetadataEmptyCount: 'attribute-metadata empty count',
 };
 
 const intersection = (a: Set<string>, b: Set<string>) =>
@@ -101,8 +102,40 @@ const countByUnitText = (ctx: StatsContext, graph: Graph): StatsData => {
   };
 };
 
+const countEmptyMetadata = (graph: Graph): StatsData => {
+  return {
+    name: nameConst.attributeMetadataEmptyCount,
+    values: [
+      {
+        name: 'name',
+        value: graph.attributeMetadataList
+          .map(m => m.name)
+          .filter(n => n.length === 0).length,
+      },
+      {
+        name: 'alternateName',
+        value: graph.attributeMetadataList
+          .map(m => m.alternateName)
+          .filter(n => n.length === 0).length,
+      },
+      {
+        name: 'unitText',
+        value: graph.attributeMetadataList
+          .map(m => m.unitText)
+          .filter(n => n.length === 0).length,
+      },
+      {
+        name: 'tagSet',
+        value: graph.attributeMetadataList
+          .map(m => m.tagSet)
+          .filter(n => n.length === 0).length,
+      },
+    ],
+  };
+};
+
 const getStats = (): StatsData[] => {
   return [];
 };
 
-export { countByTags, countByUnitText, getStats };
+export { countByTags, countByUnitText, countEmptyMetadata, getStats };

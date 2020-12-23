@@ -1,4 +1,4 @@
-import { countByTags, countByUnitText } from '../src/stats';
+import { countByTags, countByUnitText, countEmptyMetadata } from '../src/stats';
 import { Graph, StatsContext } from '../src/model';
 
 const fixtureAlpha: Graph = require('./fixture-graph-alpha.json');
@@ -46,6 +46,22 @@ describe('count by unit text', () => {
       values: [
         { name: 'km', value: 1 },
         { name: 'GBP', value: 2 },
+      ],
+    };
+    expect(actual).toEqual(expected);
+  });
+});
+
+describe('count empty metadata', () => {
+  it('count empty fields for each metadata', () => {
+    const actual = countEmptyMetadata(fixtureAlpha);
+    const expected = {
+      name: 'attribute-metadata empty count',
+      values: [
+        { name: 'name', value: 1 },
+        { name: 'alternateName', value: 5 },
+        { name: 'unitText', value: 2 },
+        { name: 'tagSet', value: 2 },
       ],
     };
     expect(actual).toEqual(expected);
