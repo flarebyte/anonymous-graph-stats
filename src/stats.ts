@@ -156,6 +156,52 @@ const countRootGraph = (graph: Graph): StatsData => {
   };
 };
 
+const median = (counts: number[]): number => {
+  const half = Math.floor(counts.length / 2);
+  return counts.length % 2
+    ? counts[half]
+    : (counts[half - 1] + counts[half]) / 2.0;
+};
+
+const countAttrSerie = (name: string, counts: number[]): StatsNameValue[] => {
+  return counts.length < 3
+    ? []
+    : [
+        {
+          name: `${name} min`,
+          value: counts[0],
+        },
+        {
+          name: `${name} max`,
+          value: counts.slice(-1)[0],
+        },
+        {
+          name: `${name} median`,
+          value: median(counts),
+        },
+        {
+          name: `${name} frequency 1`,
+          value: counts.filter(c => c === 1).length,
+        },
+        {
+          name: `${name} frequency 2`,
+          value: counts.filter(c => c === 2).length,
+        },
+        {
+          name: `${name} frequency 3`,
+          value: counts.filter(c => c === 3).length,
+        },
+        {
+          name: `${name} frequency 4`,
+          value: counts.filter(c => c === 4).length,
+        },
+        {
+          name: `${name} frequency 5+`,
+          value: counts.filter(c => c >= 5).length,
+        },
+      ];
+};
+
 const countAttributes = (graph: Graph): StatsData => {
   const attributeIds = graph.attributeMetadataList.map(a => a.id);
   const attributeIdsSet = new Set(attributeIds);
@@ -178,6 +224,14 @@ const countAttributes = (graph: Graph): StatsData => {
   const commonAttrsCount = [...attrInNodesSet].filter(id =>
     attrInEdgeSet.has(id)
   ).length;
+  const asc = (a: number, b: number) => a - b;
+
+  const attrCountByNode = graph.nodeList
+    .map(n => n.attributeList.length)
+    .sort(asc);
+  const attrCountByEdge = graph.edgeList
+    .map(n => n.attributeList.length)
+    .sort(asc);
 
   return {
     name: nameConst.attributeCount,
@@ -218,7 +272,13 @@ const countAttributes = (graph: Graph): StatsData => {
         name: 'edges used',
         value: attrInEdges.length,
       },
-    ],
+      {
+        name: 'nodes min',
+        value: attrInEdges.length,
+      },
+    ]
+      .concat(countAttrSerie('nodes', attrCountByNode))
+      .concat(countAttrSerie('edges', attrCountByEdge)),
   };
 };
 

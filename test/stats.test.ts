@@ -1,4 +1,5 @@
 import {
+  countAttributes,
   countByTags,
   countByUnitText,
   countEmptyMetadata,
@@ -30,7 +31,7 @@ describe('count by tags', () => {
       {
         name: 'edge tags count',
         values: [
-          { name: 'alpha', value: 2 },
+          { name: 'alpha', value: 3 },
           { name: 'delta', value: 1 },
         ],
       },
@@ -81,7 +82,45 @@ describe('count root graph', () => {
       values: [
         { name: 'attributeMetadataList', value: 6 },
         { name: 'nodeList', value: 4 },
-        { name: 'edgeList', value: 2 },
+        { name: 'edgeList', value: 3 },
+      ],
+    };
+    expect(actual).toEqual(expected);
+  });
+});
+
+describe('count attributes', () => {
+  it('count attributes', () => {
+    const actual = countAttributes(fixtureAlpha);
+    const expected = {
+      name: 'attribute count',
+      values: [
+        { name: 'duplicate', value: 0 },
+        { name: 'unused', value: 3 },
+        { name: 'declared', value: 6 },
+        { name: 'undeclared', value: 1 },
+        { name: 'nodes unique used', value: 1 },
+        { name: 'edges unique used', value: 3 },
+        { name: 'nodes edges unique intersection used', value: 0 },
+        { name: 'nodes used', value: 4 },
+        { name: 'edges used', value: 5 },
+        { name: 'nodes min', value: 5 },
+        { name: 'nodes min', value: 1 },
+        { name: 'nodes max', value: 1 },
+        { name: 'nodes median', value: 1 },
+        { name: 'nodes frequency 1', value: 4 },
+        { name: 'nodes frequency 2', value: 0 },
+        { name: 'nodes frequency 3', value: 0 },
+        { name: 'nodes frequency 4', value: 0 },
+        { name: 'nodes frequency 5+', value: 0 },
+        { name: 'edges min', value: 1 },
+        { name: 'edges max', value: 2 },
+        { name: 'edges median', value: 2 },
+        { name: 'edges frequency 1', value: 1 },
+        { name: 'edges frequency 2', value: 2 },
+        { name: 'edges frequency 3', value: 0 },
+        { name: 'edges frequency 4', value: 0 },
+        { name: 'edges frequency 5+', value: 0 },
       ],
     };
     expect(actual).toEqual(expected);
