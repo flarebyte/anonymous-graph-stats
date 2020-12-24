@@ -22,9 +22,12 @@ const nameConst = {
   attributeMetadataTagsCount: 'attribute-metadata tags count',
   attributeMetadataUnitsCount: 'attribute-metadata units count',
   attributeMetadataEmptyCount: 'attribute-metadata empty count',
+  attributeMetadataStringCount: 'attribute-metadata string count',
   graphCount: 'graph count',
   attributeCount: 'attribute count',
 };
+
+const asc = (a: number, b: number) => a - b;
 
 const intersection = (a: Set<string>, b: Set<string>) =>
   new Set([...a].filter(x => b.has(x)));
@@ -163,6 +166,15 @@ const median = (counts: number[]): number => {
     : (counts[half - 1] + counts[half]) / 2.0;
 };
 
+const quantile = (counts: number[], q: number) => {
+  const pos = (counts.length - 1) * q;
+  const base = Math.floor(pos);
+  const rest = pos - base;
+  return counts[base + 1] !== undefined
+    ? counts[base] + rest * (counts[base + 1] - counts[base])
+    : counts[base];
+};
+
 const countAttrSerie = (name: string, counts: number[]): StatsNameValue[] => {
   return counts.length < 3
     ? []
@@ -202,6 +214,47 @@ const countAttrSerie = (name: string, counts: number[]): StatsNameValue[] => {
       ];
 };
 
+const countStringSerie = (name: string, values: string[]): StatsNameValue[] => {
+  const charsCount = values.map(s => s.length).sort(asc);
+  const wordsCount = values.map(s => s.split(' ').length).sort(asc);
+  return values.length < 3
+    ? []
+    : [
+        {
+          name: `${name} chars min`,
+          value: charsCount[0],
+        },
+        {
+          name: `${name} chars max`,
+          value: charsCount.slice(-1)[0],
+        },
+        {
+          name: `${name} chars median`,
+          value: median(charsCount),
+        },
+        {
+          name: `${name} chars quartile first`,
+          value: quantile(charsCount, 0.25),
+        },
+        {
+          name: `${name} chars quartile third`,
+          value: quantile(charsCount, 0.75),
+        },
+        {
+          name: `${name} words min`,
+          value: wordsCount[0],
+        },
+        {
+          name: `${name} words max`,
+          value: wordsCount.slice(-1)[0],
+        },
+        {
+          name: `${name} words median`,
+          value: median(wordsCount),
+        },
+      ];
+};
+
 const countAttributes = (graph: Graph): StatsData => {
   const attributeIds = graph.attributeMetadataList.map(a => a.id);
   const attributeIdsSet = new Set(attributeIds);
@@ -224,7 +277,6 @@ const countAttributes = (graph: Graph): StatsData => {
   const commonAttrsCount = [...attrInNodesSet].filter(id =>
     attrInEdgeSet.has(id)
   ).length;
-  const asc = (a: number, b: number) => a - b;
 
   const attrCountByNode = graph.nodeList
     .map(n => n.attributeList.length)
@@ -282,6 +334,21 @@ const countAttributes = (graph: Graph): StatsData => {
   };
 };
 
+const countAttributeMetadata = (graph: Graph): StatsData => {
+  return {
+    name: nameConst.attributeMetadataStringCount,
+    values: countStringSerie(
+      'name',
+      graph.attributeMetadataList.map(a => a.name)
+    ).concat(
+      countStringSerie(
+        'alternateName',
+        graph.attributeMetadataList.map(a => a.alternateName)
+      )
+    ),
+  };
+};
+
 const getStats = (): StatsData[] => {
   return [];
 };
@@ -292,5 +359,6 @@ export {
   countEmptyMetadata,
   countRootGraph,
   countAttributes,
+  countAttributeMetadata,
   getStats,
 };
