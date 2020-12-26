@@ -66,7 +66,7 @@ describe('count empty metadata', () => {
       name: 'attribute-metadata empty count',
       values: [
         { name: 'name', value: 1 },
-        { name: 'alternateName', value: 5 },
+        { name: 'alternateName', value: 4 },
         { name: 'unitText', value: 2 },
         { name: 'tagSet', value: 2 },
       ],
@@ -148,12 +148,14 @@ describe('count attribute metadata', () => {
         { name: 'alternateName chars max', value: 5 },
         { name: 'alternateName chars median', value: 0 },
         { name: 'alternateName chars quartile first', value: 0 },
-        { name: 'alternateName chars quartile third', value: 0 },
+        { name: 'alternateName chars quartile third', value: 1.5 },
         { name: 'alternateName words min', value: 1 },
         { name: 'alternateName words max', value: 1 },
         { name: 'alternateName words median', value: 1 },
         { name: 'alternateName charpage 1', value: 2 },
         { name: 'alternateName charpage 2', value: 3 },
+        { name: 'alternateName charpage 243', value: 1 },
+        { name: 'alternateName charpage 369', value: 1 },
       ],
     };
     expect(actual).toEqual(expected);

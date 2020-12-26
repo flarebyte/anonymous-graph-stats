@@ -3,7 +3,7 @@
         {
             "id": "1",
             "name": "Speed",
-            "alternateName": "",
+            "alternateName": "速度",
             "unitText": "km/h",
             "tagSet": ["alpha", "beta"]
         },
