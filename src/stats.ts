@@ -58,6 +58,14 @@ const toStatsNameValueList = (
     .filter(v => v[1] > 0)
     .map(v => ({ name: v[0], value: v[1] }));
 
+const toStatsNameValueListWithPrefix = (
+  prefix: string,
+  tagCounter: StatsNameValueMap
+): StatsNameValue[] =>
+  Object.entries(tagCounter)
+    .filter(v => v[1] > 0)
+    .map(v => ({ name: prefix + v[0], value: v[1] }));
+
 const extractTagSet = (list: Taggable[]): string[][] => list.map(a => a.tagSet);
 
 const countTagsInList = (
@@ -214,9 +222,26 @@ const countAttrSerie = (name: string, counts: number[]): StatsNameValue[] => {
       ];
 };
 
+const charToPage = (onechar: string): string => {
+  const cp = onechar.codePointAt(0);
+  return cp == null ? 'na' : Math.ceil(cp / 100).toString();
+};
+
+const stringToPages = (value: string): string[] => {
+  const results: string[] = [];
+  for (let codePoint of value) {
+    results.push(charToPage(codePoint));
+  }
+  return results;
+};
 const countStringSerie = (name: string, values: string[]): StatsNameValue[] => {
   const charsCount = values.map(s => s.length).sort(asc);
   const wordsCount = values.map(s => s.split(' ').length).sort(asc);
+  const charsByPage = values.flatMap(s => stringToPages(s));
+  const pageStats = charsByPage.reduce(
+    categoryCounter,
+    initCounter(new Set(charsByPage))
+  );
   return values.length < 3
     ? []
     : [
@@ -252,7 +277,7 @@ const countStringSerie = (name: string, values: string[]): StatsNameValue[] => {
           name: `${name} words median`,
           value: median(wordsCount),
         },
-      ];
+      ].concat(toStatsNameValueListWithPrefix(`${name} charpage `, pageStats));
 };
 
 const countAttributes = (graph: Graph): StatsData => {

@@ -4,6 +4,7 @@ import {
   countByUnitText,
   countEmptyMetadata,
   countRootGraph,
+  countAttributeMetadata,
 } from '../src/stats';
 import { Graph, StatsContext } from '../src/model';
 
@@ -121,6 +122,38 @@ describe('count attributes', () => {
         { name: 'edges frequency 3', value: 0 },
         { name: 'edges frequency 4', value: 0 },
         { name: 'edges frequency 5+', value: 0 },
+      ],
+    };
+    expect(actual).toEqual(expected);
+  });
+});
+
+describe('count attribute metadata', () => {
+  it('count attribute metadata', () => {
+    const actual = countAttributeMetadata(fixtureAlpha);
+    const expected = {
+      name: 'attribute-metadata string count',
+      values: [
+        { name: 'name chars min', value: 0 },
+        { name: 'name chars max', value: 16 },
+        { name: 'name chars median', value: 7.5 },
+        { name: 'name chars quartile first', value: 4.25 },
+        { name: 'name chars quartile third', value: 10.75 },
+        { name: 'name words min', value: 1 },
+        { name: 'name words max', value: 3 },
+        { name: 'name words median', value: 1.5 },
+        { name: 'name charpage 1', value: 15 },
+        { name: 'name charpage 2', value: 31 },
+        { name: 'alternateName chars min', value: 0 },
+        { name: 'alternateName chars max', value: 5 },
+        { name: 'alternateName chars median', value: 0 },
+        { name: 'alternateName chars quartile first', value: 0 },
+        { name: 'alternateName chars quartile third', value: 0 },
+        { name: 'alternateName words min', value: 1 },
+        { name: 'alternateName words max', value: 1 },
+        { name: 'alternateName words median', value: 1 },
+        { name: 'alternateName charpage 1', value: 2 },
+        { name: 'alternateName charpage 2', value: 3 },
       ],
     };
     expect(actual).toEqual(expected);
