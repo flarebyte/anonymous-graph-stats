@@ -50,7 +50,7 @@
                 {
                     "id": "4",
                     "value": "car",
-                    "optionalValueList": [],
+                    "optionalValueList": ["車"],
                     "tagSet": ["alpha"]
                 }
             ]
@@ -61,7 +61,7 @@
                 {
                     "id": "4",
                     "value": "plane",
-                    "optionalValueList": [],
+                    "optionalValueList": ["飛行機"],
                     "tagSet": ["alpha", "echo"]
                 }
             ]

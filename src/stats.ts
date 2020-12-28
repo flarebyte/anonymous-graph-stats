@@ -355,7 +355,19 @@ const countAttributes = (graph: Graph): StatsData => {
       },
     ]
       .concat(countAttrSerie('nodes', attrCountByNode))
-      .concat(countAttrSerie('edges', attrCountByEdge)),
+      .concat(countAttrSerie('edges', attrCountByEdge))
+      .concat(
+        countStringSerie(
+          'nodes value',
+          graph.nodeList.flatMap(n => n.attributeList).map(a => a.value)
+        )
+      )
+      .concat(
+        countStringSerie(
+          'edges value',
+          graph.edgeList.flatMap(n => n.attributeList).map(a => a.value)
+        )
+      ),
   };
 };
 
