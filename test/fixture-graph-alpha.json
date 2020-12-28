@@ -72,7 +72,7 @@
                 {
                     "id": "4",
                     "value": "gold",
-                    "optionalValueList": [],
+                    "optionalValueList": ["ゴールド"],
                     "tagSet": []
                 }
             ]
@@ -103,7 +103,7 @@
                 {
                     "id": "5",
                     "value": "25",
-                    "optionalValueList": [],
+                    "optionalValueList": ["😁"],
                     "tagSet": []
                 }
             ]
@@ -115,13 +115,13 @@
                 {
                     "id": "1",
                     "value": "150",
-                    "optionalValueList": [],
+                    "optionalValueList": ["😃"],
                     "tagSet": ["alpha"]
                 },
                 {
                     "id": "5",
                     "value": "15",
-                    "optionalValueList": [],
+                    "optionalValueList": ["😇"],
                     "tagSet": []
                 }
             ]
