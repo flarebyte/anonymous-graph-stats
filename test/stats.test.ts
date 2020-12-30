@@ -11,6 +11,7 @@ describe('get statistics for graph', () => {
       supportedUnits: ['km', 'GBP'],
     };
     const actual = getStats(ctx, fixtureAlpha);
+    // console.log(JSON.stringify(actual, null, 2));
     expect(actual).toEqual(fixtureExpectedAlpha);
   });
 });

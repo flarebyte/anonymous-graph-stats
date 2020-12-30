@@ -1,542 +1,542 @@
 [
     {
-      "name": "graph count",
+      "name": "graph",
       "action": "count",
       "text": "attributeMetadataList",
       "value": 6
     },
     {
-      "name": "graph count",
+      "name": "graph",
       "action": "count",
       "text": "nodeList",
       "value": 4
     },
     {
-      "name": "graph count",
+      "name": "graph",
       "action": "count",
       "text": "edgeList",
       "value": 3
     },
     {
-      "name": "attribute-metadata tags count",
+      "name": "attributeMetadataList",
       "action": "count",
       "text": "alpha",
       "value": 3
     },
     {
-      "name": "attribute-metadata tags count",
+      "name": "attributeMetadataList",
       "action": "count",
       "text": "beta",
       "value": 1
     },
     {
-      "name": "node tags count",
+      "name": "nodeList",
       "action": "count",
       "text": "alpha",
       "value": 2
     },
     {
-      "name": "edge tags count",
+      "name": "edgeList",
       "action": "count",
       "text": "alpha",
       "value": 3
     },
     {
-      "name": "edge tags count",
+      "name": "edgeList",
       "action": "count",
       "text": "delta",
       "value": 1
     },
     {
-      "name": "attribute-metadata units count",
+      "name": "attributeMetadataList unitText",
       "action": "count",
       "text": "km",
       "value": 1
     },
     {
-      "name": "attribute-metadata units count",
+      "name": "attributeMetadataList unitText",
       "action": "count",
       "text": "GBP",
       "value": 2
     },
     {
-      "name": "attribute-metadata empty count",
-      "action": "count",
+      "name": "attributeMetadataList",
+      "action": "empty count",
       "text": "name",
       "value": 1
     },
     {
-      "name": "attribute-metadata empty count",
-      "action": "count",
+      "name": "attributeMetadataList",
+      "action": "empty count",
       "text": "alternateName",
       "value": 4
     },
     {
-      "name": "attribute-metadata empty count",
-      "action": "count",
+      "name": "attributeMetadataList",
+      "action": "empty count",
       "text": "unitText",
       "value": 2
     },
     {
-      "name": "attribute-metadata empty count",
-      "action": "count",
+      "name": "attributeMetadataList",
+      "action": "empty count",
       "text": "tagSet",
       "value": 2
     },
     {
-      "name": "attribute count",
+      "name": "attributeMetadataList",
       "action": "count",
       "text": "duplicate",
       "value": 0
     },
     {
-      "name": "attribute count",
+      "name": "attributeMetadataList",
       "action": "count",
       "text": "unused",
       "value": 3
     },
     {
-      "name": "attribute count",
+      "name": "attributeMetadataList",
       "action": "count",
       "text": "declared",
       "value": 6
     },
     {
-      "name": "attribute count",
+      "name": "attributeMetadataList",
       "action": "count",
       "text": "undeclared",
       "value": 1
     },
     {
-      "name": "attribute count",
-      "action": "count",
-      "text": "nodes unique used",
+      "name": "nodeList",
+      "action": "unique count",
+      "text": "used",
       "value": 1
     },
     {
-      "name": "attribute count",
-      "action": "count",
-      "text": "edges unique used",
+      "name": "edgeList",
+      "action": "unique count",
+      "text": "used",
       "value": 3
     },
     {
-      "name": "attribute count",
-      "action": "count",
-      "text": "nodes edges unique intersection used",
+      "name": "nodeList edgeList",
+      "action": "unique intersection",
+      "text": "used",
       "value": 0
     },
     {
-      "name": "attribute count",
+      "name": "nodeList",
       "action": "count",
-      "text": "nodes used",
+      "text": "used",
       "value": 4
     },
     {
-      "name": "attribute count",
+      "name": "edgeList",
       "action": "count",
-      "text": "edges used",
+      "text": "used",
       "value": 5
     },
     {
-      "name": "attribute count",
-      "action": "count",
-      "text": "nodes min",
-      "value": 5
-    },
-    {
-      "name": "nodes",
-      "action": "count",
-      "text": "nodes min",
-      "value": 1
-    },
-    {
-      "name": "nodes",
-      "action": "count",
-      "text": "nodes max",
-      "value": 1
-    },
-    {
-      "name": "nodes",
-      "action": "count",
-      "text": "nodes median",
-      "value": 1
-    },
-    {
-      "name": "nodes",
-      "action": "count",
-      "text": "nodes frequency 1",
+      "name": "nodeList",
+      "action": "count min",
+      "text": "",
       "value": 4
     },
     {
-      "name": "nodes",
-      "action": "count",
-      "text": "nodes frequency 2",
-      "value": 0
-    },
-    {
-      "name": "nodes",
-      "action": "count",
-      "text": "nodes frequency 3",
-      "value": 0
-    },
-    {
-      "name": "nodes",
-      "action": "count",
-      "text": "nodes frequency 4",
-      "value": 0
-    },
-    {
-      "name": "nodes",
-      "action": "count",
-      "text": "nodes frequency 5+",
-      "value": 0
-    },
-    {
-      "name": "edges",
-      "action": "count",
-      "text": "edges min",
+      "name": "nodeList",
+      "action": "count min",
+      "text": "",
       "value": 1
     },
     {
-      "name": "edges",
-      "action": "count",
-      "text": "edges max",
-      "value": 2
-    },
-    {
-      "name": "edges",
-      "action": "count",
-      "text": "edges median",
-      "value": 2
-    },
-    {
-      "name": "edges",
-      "action": "count",
-      "text": "edges frequency 1",
+      "name": "nodeList",
+      "action": "count max",
+      "text": "",
       "value": 1
     },
     {
-      "name": "edges",
+      "name": "nodeList",
+      "action": "count median",
+      "text": "",
+      "value": 1
+    },
+    {
+      "name": "nodeList",
       "action": "count",
-      "text": "edges frequency 2",
+      "text": "frequency 1",
+      "value": 4
+    },
+    {
+      "name": "nodeList",
+      "action": "count",
+      "text": "frequency 2",
+      "value": 0
+    },
+    {
+      "name": "nodeList",
+      "action": "count",
+      "text": "frequency 3",
+      "value": 0
+    },
+    {
+      "name": "nodeList",
+      "action": "count",
+      "text": "frequency 4",
+      "value": 0
+    },
+    {
+      "name": "nodeList",
+      "action": "count",
+      "text": "frequency 5+",
+      "value": 0
+    },
+    {
+      "name": "edgeList",
+      "action": "count min",
+      "text": "",
+      "value": 1
+    },
+    {
+      "name": "edgeList",
+      "action": "count max",
+      "text": "",
       "value": 2
     },
     {
-      "name": "edges",
+      "name": "edgeList",
+      "action": "count median",
+      "text": "",
+      "value": 2
+    },
+    {
+      "name": "edgeList",
       "action": "count",
-      "text": "edges frequency 3",
+      "text": "frequency 1",
+      "value": 1
+    },
+    {
+      "name": "edgeList",
+      "action": "count",
+      "text": "frequency 2",
+      "value": 2
+    },
+    {
+      "name": "edgeList",
+      "action": "count",
+      "text": "frequency 3",
       "value": 0
     },
     {
-      "name": "edges",
+      "name": "edgeList",
       "action": "count",
-      "text": "edges frequency 4",
+      "text": "frequency 4",
       "value": 0
     },
     {
-      "name": "edges",
+      "name": "edgeList",
       "action": "count",
-      "text": "edges frequency 5+",
+      "text": "frequency 5+",
       "value": 0
     },
     {
-      "name": "nodes value",
-      "action": "count",
-      "text": "nodes value chars min",
+      "name": "nodeList value",
+      "action": "count min",
+      "text": "chars",
       "value": 3
     },
     {
-      "name": "nodes value",
-      "action": "count",
-      "text": "nodes value chars max",
+      "name": "nodeList value",
+      "action": "count max",
+      "text": "chars",
       "value": 6
     },
     {
-      "name": "nodes value",
-      "action": "count",
-      "text": "nodes value chars median",
+      "name": "nodeList value",
+      "action": "count median",
+      "text": "chars",
       "value": 4.5
     },
     {
-      "name": "nodes value",
-      "action": "count",
-      "text": "nodes value chars quartile first",
+      "name": "nodeList value",
+      "action": "count quartile first",
+      "text": "chars",
       "value": 3.75
     },
     {
-      "name": "nodes value",
-      "action": "count",
-      "text": "nodes value chars quartile third",
+      "name": "nodeList value",
+      "action": "count quartile third",
+      "text": "chars",
       "value": 5.25
     },
     {
-      "name": "nodes value",
-      "action": "count",
-      "text": "nodes value words min",
+      "name": "nodeList value",
+      "action": "count min",
+      "text": "words",
       "value": 1
     },
     {
-      "name": "nodes value",
-      "action": "count",
-      "text": "nodes value words max",
+      "name": "nodeList value",
+      "action": "count max",
+      "text": "words",
       "value": 1
     },
     {
-      "name": "nodes value",
-      "action": "count",
-      "text": "nodes value words median",
+      "name": "nodeList value",
+      "action": "count median",
+      "text": "words",
       "value": 1
     },
     {
-      "name": "nodes value charpage ",
+      "name": "nodeList value charpage ",
       "action": "count",
       "text": "1",
       "value": 4
     },
     {
-      "name": "nodes value charpage ",
+      "name": "nodeList value charpage ",
       "action": "count",
       "text": "2",
       "value": 14
     },
     {
-      "name": "edges value",
-      "action": "count",
-      "text": "edges value chars min",
+      "name": "edgeList value",
+      "action": "count min",
+      "text": "chars",
       "value": 2
     },
     {
-      "name": "edges value",
-      "action": "count",
-      "text": "edges value chars max",
+      "name": "edgeList value",
+      "action": "count max",
+      "text": "chars",
       "value": 3
     },
     {
-      "name": "edges value",
-      "action": "count",
-      "text": "edges value chars median",
+      "name": "edgeList value",
+      "action": "count median",
+      "text": "chars",
       "value": 3
     },
     {
-      "name": "edges value",
-      "action": "count",
-      "text": "edges value chars quartile first",
+      "name": "edgeList value",
+      "action": "count quartile first",
+      "text": "chars",
       "value": 2
     },
     {
-      "name": "edges value",
-      "action": "count",
-      "text": "edges value chars quartile third",
+      "name": "edgeList value",
+      "action": "count quartile third",
+      "text": "chars",
       "value": 3
     },
     {
-      "name": "edges value",
-      "action": "count",
-      "text": "edges value words min",
+      "name": "edgeList value",
+      "action": "count min",
+      "text": "words",
       "value": 1
     },
     {
-      "name": "edges value",
-      "action": "count",
-      "text": "edges value words max",
+      "name": "edgeList value",
+      "action": "count max",
+      "text": "words",
       "value": 1
     },
     {
-      "name": "edges value",
-      "action": "count",
-      "text": "edges value words median",
+      "name": "edgeList value",
+      "action": "count median",
+      "text": "words",
       "value": 1
     },
     {
-      "name": "edges value charpage ",
+      "name": "edgeList value charpage ",
       "action": "count",
       "text": "1",
       "value": 13
     },
     {
-      "name": "nodes optionalValueList",
-      "action": "count",
-      "text": "nodes optionalValueList chars min",
+      "name": "nodeList optionalValueList",
+      "action": "count min",
+      "text": "chars",
       "value": 1
     },
     {
-      "name": "nodes optionalValueList",
-      "action": "count",
-      "text": "nodes optionalValueList chars max",
+      "name": "nodeList optionalValueList",
+      "action": "count max",
+      "text": "chars",
       "value": 4
     },
     {
-      "name": "nodes optionalValueList",
-      "action": "count",
-      "text": "nodes optionalValueList chars median",
+      "name": "nodeList optionalValueList",
+      "action": "count median",
+      "text": "chars",
       "value": 3
     },
     {
-      "name": "nodes optionalValueList",
-      "action": "count",
-      "text": "nodes optionalValueList chars quartile first",
+      "name": "nodeList optionalValueList",
+      "action": "count quartile first",
+      "text": "chars",
       "value": 2
     },
     {
-      "name": "nodes optionalValueList",
-      "action": "count",
-      "text": "nodes optionalValueList chars quartile third",
+      "name": "nodeList optionalValueList",
+      "action": "count quartile third",
+      "text": "chars",
       "value": 3.5
     },
     {
-      "name": "nodes optionalValueList",
-      "action": "count",
-      "text": "nodes optionalValueList words min",
+      "name": "nodeList optionalValueList",
+      "action": "count min",
+      "text": "words",
       "value": 1
     },
     {
-      "name": "nodes optionalValueList",
-      "action": "count",
-      "text": "nodes optionalValueList words max",
+      "name": "nodeList optionalValueList",
+      "action": "count max",
+      "text": "words",
       "value": 1
     },
     {
-      "name": "nodes optionalValueList",
-      "action": "count",
-      "text": "nodes optionalValueList words median",
+      "name": "nodeList optionalValueList",
+      "action": "count median",
+      "text": "words",
       "value": 1
     },
     {
-      "name": "nodes optionalValueList charpage ",
+      "name": "nodeList optionalValueList charpage ",
       "action": "count",
       "text": "125",
       "value": 2
     },
     {
-      "name": "nodes optionalValueList charpage ",
+      "name": "nodeList optionalValueList charpage ",
       "action": "count",
       "text": "126",
       "value": 2
     },
     {
-      "name": "nodes optionalValueList charpage ",
+      "name": "nodeList optionalValueList charpage ",
       "action": "count",
       "text": "273",
       "value": 1
     },
     {
-      "name": "nodes optionalValueList charpage ",
+      "name": "nodeList optionalValueList charpage ",
       "action": "count",
       "text": "349",
       "value": 1
     },
     {
-      "name": "nodes optionalValueList charpage ",
+      "name": "nodeList optionalValueList charpage ",
       "action": "count",
       "text": "366",
       "value": 1
     },
     {
-      "name": "nodes optionalValueList charpage ",
+      "name": "nodeList optionalValueList charpage ",
       "action": "count",
       "text": "392",
       "value": 1
     },
     {
-      "name": "edges optionalValueList",
-      "action": "count",
-      "text": "edges optionalValueList chars min",
+      "name": "edgeList optionalValueList",
+      "action": "count min",
+      "text": "chars",
       "value": 2
     },
     {
-      "name": "edges optionalValueList",
-      "action": "count",
-      "text": "edges optionalValueList chars max",
+      "name": "edgeList optionalValueList",
+      "action": "count max",
+      "text": "chars",
       "value": 2
     },
     {
-      "name": "edges optionalValueList",
-      "action": "count",
-      "text": "edges optionalValueList chars median",
+      "name": "edgeList optionalValueList",
+      "action": "count median",
+      "text": "chars",
       "value": 2
     },
     {
-      "name": "edges optionalValueList",
-      "action": "count",
-      "text": "edges optionalValueList chars quartile first",
+      "name": "edgeList optionalValueList",
+      "action": "count quartile first",
+      "text": "chars",
       "value": 2
     },
     {
-      "name": "edges optionalValueList",
-      "action": "count",
-      "text": "edges optionalValueList chars quartile third",
+      "name": "edgeList optionalValueList",
+      "action": "count quartile third",
+      "text": "chars",
       "value": 2
     },
     {
-      "name": "edges optionalValueList",
-      "action": "count",
-      "text": "edges optionalValueList words min",
+      "name": "edgeList optionalValueList",
+      "action": "count min",
+      "text": "words",
       "value": 1
     },
     {
-      "name": "edges optionalValueList",
-      "action": "count",
-      "text": "edges optionalValueList words max",
+      "name": "edgeList optionalValueList",
+      "action": "count max",
+      "text": "words",
       "value": 1
     },
     {
-      "name": "edges optionalValueList",
-      "action": "count",
-      "text": "edges optionalValueList words median",
+      "name": "edgeList optionalValueList",
+      "action": "count median",
+      "text": "words",
       "value": 1
     },
     {
-      "name": "edges optionalValueList charpage ",
+      "name": "edgeList optionalValueList charpage ",
       "action": "count",
       "text": "1286",
       "value": 3
     },
     {
       "name": "name",
-      "action": "count",
-      "text": "name chars min",
+      "action": "count min",
+      "text": "chars",
       "value": 0
     },
     {
       "name": "name",
-      "action": "count",
-      "text": "name chars max",
+      "action": "count max",
+      "text": "chars",
       "value": 16
     },
     {
       "name": "name",
-      "action": "count",
-      "text": "name chars median",
+      "action": "count median",
+      "text": "chars",
       "value": 7.5
     },
     {
       "name": "name",
-      "action": "count",
-      "text": "name chars quartile first",
+      "action": "count quartile first",
+      "text": "chars",
       "value": 4.25
     },
     {
       "name": "name",
-      "action": "count",
-      "text": "name chars quartile third",
+      "action": "count quartile third",
+      "text": "chars",
       "value": 10.75
     },
     {
       "name": "name",
-      "action": "count",
-      "text": "name words min",
+      "action": "count min",
+      "text": "words",
       "value": 1
     },
     {
       "name": "name",
-      "action": "count",
-      "text": "name words max",
+      "action": "count max",
+      "text": "words",
       "value": 3
     },
     {
       "name": "name",
-      "action": "count",
-      "text": "name words median",
+      "action": "count median",
+      "text": "words",
       "value": 1.5
     },
     {
@@ -553,50 +553,50 @@
     },
     {
       "name": "alternateName",
-      "action": "count",
-      "text": "alternateName chars min",
+      "action": "count min",
+      "text": "chars",
       "value": 0
     },
     {
       "name": "alternateName",
-      "action": "count",
-      "text": "alternateName chars max",
+      "action": "count max",
+      "text": "chars",
       "value": 5
     },
     {
       "name": "alternateName",
-      "action": "count",
-      "text": "alternateName chars median",
+      "action": "count median",
+      "text": "chars",
       "value": 0
     },
     {
       "name": "alternateName",
-      "action": "count",
-      "text": "alternateName chars quartile first",
+      "action": "count quartile first",
+      "text": "chars",
       "value": 0
     },
     {
       "name": "alternateName",
-      "action": "count",
-      "text": "alternateName chars quartile third",
+      "action": "count quartile third",
+      "text": "chars",
       "value": 1.5
     },
     {
       "name": "alternateName",
-      "action": "count",
-      "text": "alternateName words min",
+      "action": "count min",
+      "text": "words",
       "value": 1
     },
     {
       "name": "alternateName",
-      "action": "count",
-      "text": "alternateName words max",
+      "action": "count max",
+      "text": "words",
       "value": 1
     },
     {
       "name": "alternateName",
-      "action": "count",
-      "text": "alternateName words median",
+      "action": "count median",
+      "text": "words",
       "value": 1
     },
     {
