@@ -437,4 +437,20 @@ const getStats = (ctx: StatsContext, graph: Graph): StatsItem[] => {
   );
 };
 
-export { getStats };
+const toCSV = (items: StatsItem[], delimiter: string): string[] => {
+  return items.map(
+    i =>
+      `${i.name}${delimiter}${i.action}${delimiter}${i.text}${delimiter}${i.value}`
+  );
+};
+
+const parseStatsItem = (delimiter: string) => (line: string): StatsItem => {
+  const [name, action, text, value] = line.split(delimiter);
+  return { name, action, text, value: Number(value) };
+};
+
+const fromCSV = (lines: string[], delimiter: string): StatsItem[] => {
+  return lines.map(parseStatsItem(delimiter));
+};
+
+export { getStats, toCSV, fromCSV };
