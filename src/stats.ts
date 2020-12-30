@@ -441,16 +441,14 @@ const countAttributeMetadata = (graph: Graph): StatsItem[] => {
   );
 };
 
-const getStats = (): StatsItem[] => {
-  return [];
+const getStats = (ctx: StatsContext, graph: Graph): StatsItem[] => {
+  return countRootGraph(graph).concat(
+    countByTags(ctx, graph),
+    countByUnitText(ctx, graph),
+    countEmptyMetadata(graph),
+    countAttributes(graph),
+    countAttributeMetadata(graph)
+  );
 };
 
-export {
-  countByTags,
-  countByUnitText,
-  countEmptyMetadata,
-  countRootGraph,
-  countAttributes,
-  countAttributeMetadata,
-  getStats,
-};
+export { getStats };

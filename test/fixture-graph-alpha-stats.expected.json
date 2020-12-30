@@ -1,0 +1,626 @@
+[
+    {
+      "name": "graph count",
+      "action": "count",
+      "text": "attributeMetadataList",
+      "value": 6
+    },
+    {
+      "name": "graph count",
+      "action": "count",
+      "text": "nodeList",
+      "value": 4
+    },
+    {
+      "name": "graph count",
+      "action": "count",
+      "text": "edgeList",
+      "value": 3
+    },
+    {
+      "name": "attribute-metadata tags count",
+      "action": "count",
+      "text": "alpha",
+      "value": 3
+    },
+    {
+      "name": "attribute-metadata tags count",
+      "action": "count",
+      "text": "beta",
+      "value": 1
+    },
+    {
+      "name": "node tags count",
+      "action": "count",
+      "text": "alpha",
+      "value": 2
+    },
+    {
+      "name": "edge tags count",
+      "action": "count",
+      "text": "alpha",
+      "value": 3
+    },
+    {
+      "name": "edge tags count",
+      "action": "count",
+      "text": "delta",
+      "value": 1
+    },
+    {
+      "name": "attribute-metadata units count",
+      "action": "count",
+      "text": "km",
+      "value": 1
+    },
+    {
+      "name": "attribute-metadata units count",
+      "action": "count",
+      "text": "GBP",
+      "value": 2
+    },
+    {
+      "name": "attribute-metadata empty count",
+      "action": "count",
+      "text": "name",
+      "value": 1
+    },
+    {
+      "name": "attribute-metadata empty count",
+      "action": "count",
+      "text": "alternateName",
+      "value": 4
+    },
+    {
+      "name": "attribute-metadata empty count",
+      "action": "count",
+      "text": "unitText",
+      "value": 2
+    },
+    {
+      "name": "attribute-metadata empty count",
+      "action": "count",
+      "text": "tagSet",
+      "value": 2
+    },
+    {
+      "name": "attribute count",
+      "action": "count",
+      "text": "duplicate",
+      "value": 0
+    },
+    {
+      "name": "attribute count",
+      "action": "count",
+      "text": "unused",
+      "value": 3
+    },
+    {
+      "name": "attribute count",
+      "action": "count",
+      "text": "declared",
+      "value": 6
+    },
+    {
+      "name": "attribute count",
+      "action": "count",
+      "text": "undeclared",
+      "value": 1
+    },
+    {
+      "name": "attribute count",
+      "action": "count",
+      "text": "nodes unique used",
+      "value": 1
+    },
+    {
+      "name": "attribute count",
+      "action": "count",
+      "text": "edges unique used",
+      "value": 3
+    },
+    {
+      "name": "attribute count",
+      "action": "count",
+      "text": "nodes edges unique intersection used",
+      "value": 0
+    },
+    {
+      "name": "attribute count",
+      "action": "count",
+      "text": "nodes used",
+      "value": 4
+    },
+    {
+      "name": "attribute count",
+      "action": "count",
+      "text": "edges used",
+      "value": 5
+    },
+    {
+      "name": "attribute count",
+      "action": "count",
+      "text": "nodes min",
+      "value": 5
+    },
+    {
+      "name": "nodes",
+      "action": "count",
+      "text": "nodes min",
+      "value": 1
+    },
+    {
+      "name": "nodes",
+      "action": "count",
+      "text": "nodes max",
+      "value": 1
+    },
+    {
+      "name": "nodes",
+      "action": "count",
+      "text": "nodes median",
+      "value": 1
+    },
+    {
+      "name": "nodes",
+      "action": "count",
+      "text": "nodes frequency 1",
+      "value": 4
+    },
+    {
+      "name": "nodes",
+      "action": "count",
+      "text": "nodes frequency 2",
+      "value": 0
+    },
+    {
+      "name": "nodes",
+      "action": "count",
+      "text": "nodes frequency 3",
+      "value": 0
+    },
+    {
+      "name": "nodes",
+      "action": "count",
+      "text": "nodes frequency 4",
+      "value": 0
+    },
+    {
+      "name": "nodes",
+      "action": "count",
+      "text": "nodes frequency 5+",
+      "value": 0
+    },
+    {
+      "name": "edges",
+      "action": "count",
+      "text": "edges min",
+      "value": 1
+    },
+    {
+      "name": "edges",
+      "action": "count",
+      "text": "edges max",
+      "value": 2
+    },
+    {
+      "name": "edges",
+      "action": "count",
+      "text": "edges median",
+      "value": 2
+    },
+    {
+      "name": "edges",
+      "action": "count",
+      "text": "edges frequency 1",
+      "value": 1
+    },
+    {
+      "name": "edges",
+      "action": "count",
+      "text": "edges frequency 2",
+      "value": 2
+    },
+    {
+      "name": "edges",
+      "action": "count",
+      "text": "edges frequency 3",
+      "value": 0
+    },
+    {
+      "name": "edges",
+      "action": "count",
+      "text": "edges frequency 4",
+      "value": 0
+    },
+    {
+      "name": "edges",
+      "action": "count",
+      "text": "edges frequency 5+",
+      "value": 0
+    },
+    {
+      "name": "nodes value",
+      "action": "count",
+      "text": "nodes value chars min",
+      "value": 3
+    },
+    {
+      "name": "nodes value",
+      "action": "count",
+      "text": "nodes value chars max",
+      "value": 6
+    },
+    {
+      "name": "nodes value",
+      "action": "count",
+      "text": "nodes value chars median",
+      "value": 4.5
+    },
+    {
+      "name": "nodes value",
+      "action": "count",
+      "text": "nodes value chars quartile first",
+      "value": 3.75
+    },
+    {
+      "name": "nodes value",
+      "action": "count",
+      "text": "nodes value chars quartile third",
+      "value": 5.25
+    },
+    {
+      "name": "nodes value",
+      "action": "count",
+      "text": "nodes value words min",
+      "value": 1
+    },
+    {
+      "name": "nodes value",
+      "action": "count",
+      "text": "nodes value words max",
+      "value": 1
+    },
+    {
+      "name": "nodes value",
+      "action": "count",
+      "text": "nodes value words median",
+      "value": 1
+    },
+    {
+      "name": "nodes value charpage ",
+      "action": "count",
+      "text": "1",
+      "value": 4
+    },
+    {
+      "name": "nodes value charpage ",
+      "action": "count",
+      "text": "2",
+      "value": 14
+    },
+    {
+      "name": "edges value",
+      "action": "count",
+      "text": "edges value chars min",
+      "value": 2
+    },
+    {
+      "name": "edges value",
+      "action": "count",
+      "text": "edges value chars max",
+      "value": 3
+    },
+    {
+      "name": "edges value",
+      "action": "count",
+      "text": "edges value chars median",
+      "value": 3
+    },
+    {
+      "name": "edges value",
+      "action": "count",
+      "text": "edges value chars quartile first",
+      "value": 2
+    },
+    {
+      "name": "edges value",
+      "action": "count",
+      "text": "edges value chars quartile third",
+      "value": 3
+    },
+    {
+      "name": "edges value",
+      "action": "count",
+      "text": "edges value words min",
+      "value": 1
+    },
+    {
+      "name": "edges value",
+      "action": "count",
+      "text": "edges value words max",
+      "value": 1
+    },
+    {
+      "name": "edges value",
+      "action": "count",
+      "text": "edges value words median",
+      "value": 1
+    },
+    {
+      "name": "edges value charpage ",
+      "action": "count",
+      "text": "1",
+      "value": 13
+    },
+    {
+      "name": "nodes optionalValueList",
+      "action": "count",
+      "text": "nodes optionalValueList chars min",
+      "value": 1
+    },
+    {
+      "name": "nodes optionalValueList",
+      "action": "count",
+      "text": "nodes optionalValueList chars max",
+      "value": 4
+    },
+    {
+      "name": "nodes optionalValueList",
+      "action": "count",
+      "text": "nodes optionalValueList chars median",
+      "value": 3
+    },
+    {
+      "name": "nodes optionalValueList",
+      "action": "count",
+      "text": "nodes optionalValueList chars quartile first",
+      "value": 2
+    },
+    {
+      "name": "nodes optionalValueList",
+      "action": "count",
+      "text": "nodes optionalValueList chars quartile third",
+      "value": 3.5
+    },
+    {
+      "name": "nodes optionalValueList",
+      "action": "count",
+      "text": "nodes optionalValueList words min",
+      "value": 1
+    },
+    {
+      "name": "nodes optionalValueList",
+      "action": "count",
+      "text": "nodes optionalValueList words max",
+      "value": 1
+    },
+    {
+      "name": "nodes optionalValueList",
+      "action": "count",
+      "text": "nodes optionalValueList words median",
+      "value": 1
+    },
+    {
+      "name": "nodes optionalValueList charpage ",
+      "action": "count",
+      "text": "125",
+      "value": 2
+    },
+    {
+      "name": "nodes optionalValueList charpage ",
+      "action": "count",
+      "text": "126",
+      "value": 2
+    },
+    {
+      "name": "nodes optionalValueList charpage ",
+      "action": "count",
+      "text": "273",
+      "value": 1
+    },
+    {
+      "name": "nodes optionalValueList charpage ",
+      "action": "count",
+      "text": "349",
+      "value": 1
+    },
+    {
+      "name": "nodes optionalValueList charpage ",
+      "action": "count",
+      "text": "366",
+      "value": 1
+    },
+    {
+      "name": "nodes optionalValueList charpage ",
+      "action": "count",
+      "text": "392",
+      "value": 1
+    },
+    {
+      "name": "edges optionalValueList",
+      "action": "count",
+      "text": "edges optionalValueList chars min",
+      "value": 2
+    },
+    {
+      "name": "edges optionalValueList",
+      "action": "count",
+      "text": "edges optionalValueList chars max",
+      "value": 2
+    },
+    {
+      "name": "edges optionalValueList",
+      "action": "count",
+      "text": "edges optionalValueList chars median",
+      "value": 2
+    },
+    {
+      "name": "edges optionalValueList",
+      "action": "count",
+      "text": "edges optionalValueList chars quartile first",
+      "value": 2
+    },
+    {
+      "name": "edges optionalValueList",
+      "action": "count",
+      "text": "edges optionalValueList chars quartile third",
+      "value": 2
+    },
+    {
+      "name": "edges optionalValueList",
+      "action": "count",
+      "text": "edges optionalValueList words min",
+      "value": 1
+    },
+    {
+      "name": "edges optionalValueList",
+      "action": "count",
+      "text": "edges optionalValueList words max",
+      "value": 1
+    },
+    {
+      "name": "edges optionalValueList",
+      "action": "count",
+      "text": "edges optionalValueList words median",
+      "value": 1
+    },
+    {
+      "name": "edges optionalValueList charpage ",
+      "action": "count",
+      "text": "1286",
+      "value": 3
+    },
+    {
+      "name": "name",
+      "action": "count",
+      "text": "name chars min",
+      "value": 0
+    },
+    {
+      "name": "name",
+      "action": "count",
+      "text": "name chars max",
+      "value": 16
+    },
+    {
+      "name": "name",
+      "action": "count",
+      "text": "name chars median",
+      "value": 7.5
+    },
+    {
+      "name": "name",
+      "action": "count",
+      "text": "name chars quartile first",
+      "value": 4.25
+    },
+    {
+      "name": "name",
+      "action": "count",
+      "text": "name chars quartile third",
+      "value": 10.75
+    },
+    {
+      "name": "name",
+      "action": "count",
+      "text": "name words min",
+      "value": 1
+    },
+    {
+      "name": "name",
+      "action": "count",
+      "text": "name words max",
+      "value": 3
+    },
+    {
+      "name": "name",
+      "action": "count",
+      "text": "name words median",
+      "value": 1.5
+    },
+    {
+      "name": "name charpage ",
+      "action": "count",
+      "text": "1",
+      "value": 15
+    },
+    {
+      "name": "name charpage ",
+      "action": "count",
+      "text": "2",
+      "value": 31
+    },
+    {
+      "name": "alternateName",
+      "action": "count",
+      "text": "alternateName chars min",
+      "value": 0
+    },
+    {
+      "name": "alternateName",
+      "action": "count",
+      "text": "alternateName chars max",
+      "value": 5
+    },
+    {
+      "name": "alternateName",
+      "action": "count",
+      "text": "alternateName chars median",
+      "value": 0
+    },
+    {
+      "name": "alternateName",
+      "action": "count",
+      "text": "alternateName chars quartile first",
+      "value": 0
+    },
+    {
+      "name": "alternateName",
+      "action": "count",
+      "text": "alternateName chars quartile third",
+      "value": 1.5
+    },
+    {
+      "name": "alternateName",
+      "action": "count",
+      "text": "alternateName words min",
+      "value": 1
+    },
+    {
+      "name": "alternateName",
+      "action": "count",
+      "text": "alternateName words max",
+      "value": 1
+    },
+    {
+      "name": "alternateName",
+      "action": "count",
+      "text": "alternateName words median",
+      "value": 1
+    },
+    {
+      "name": "alternateName charpage ",
+      "action": "count",
+      "text": "1",
+      "value": 2
+    },
+    {
+      "name": "alternateName charpage ",
+      "action": "count",
+      "text": "2",
+      "value": 3
+    },
+    {
+      "name": "alternateName charpage ",
+      "action": "count",
+      "text": "243",
+      "value": 1
+    },
+    {
+      "name": "alternateName charpage ",
+      "action": "count",
+      "text": "369",
+      "value": 1
+    }
+  ]
