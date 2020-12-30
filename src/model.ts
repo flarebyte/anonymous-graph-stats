@@ -38,18 +38,11 @@ interface Graph {
   edgeList: Edge[];
 }
 
-interface StatsNameValue {
+interface StatsItem {
   name: string;
+  text: string;
+  action: string;
   value: number;
-}
-
-interface StatsNameValueMap {
-  [name: string]: number;
-}
-
-interface StatsData {
-  name: string;
-  values: StatsNameValue[];
 }
 
 interface StatsContext {
@@ -65,8 +58,6 @@ export {
   Node,
   Edge,
   Graph,
-  StatsData,
   StatsContext,
-  StatsNameValue,
-  StatsNameValueMap,
+  StatsItem,
 };
