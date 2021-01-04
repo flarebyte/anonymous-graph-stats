@@ -91,7 +91,6 @@ nodeList attributeList value,count quartile third,chars,5.25
 nodeList attributeList,count max,,1
 nodeList attributeList,count median,,1
 nodeList attributeList,count min,,1
-nodeList attributeList,count min,,4
 nodeList attributeList,count,frequency 1,4
 nodeList attributeList,count,frequency 2,0
 nodeList attributeList,count,frequency 3,0

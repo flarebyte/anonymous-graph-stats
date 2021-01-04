@@ -376,12 +376,6 @@ const countAttributes = (graph: Graph): StatsItem[] => {
       text: 'used',
       value: attrInEdges.length,
     },
-    {
-      name: 'nodeList attributeList',
-      action: 'count min',
-      text: '',
-      value: attrInNodes.length,
-    },
   ]
     .concat(countAttrSerie('nodeList attributeList', attrCountByNode))
     .concat(countAttrSerie('edgeList attributeList', attrCountByEdge))

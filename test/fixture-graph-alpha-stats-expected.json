@@ -141,12 +141,6 @@
     "name": "nodeList attributeList",
     "action": "count min",
     "text": "",
-    "value": 4
-  },
-  {
-    "name": "nodeList attributeList",
-    "action": "count min",
-    "text": "",
     "value": 1
   },
   {
