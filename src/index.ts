@@ -576,7 +576,7 @@ const validate = (ctx: StatsContext, items: StatsItem[]): string => {
   const invalidItemCount = invalidItems.length;
   if (invalidItemCount > 0) {
     const invalidInfo = invalidItems.map(glueStatsItem).join(';');
-    return `Has ${invalidItemCount} invalid items --> ${invalidInfo}`;
+    return `Found ${invalidItemCount} invalid items --> ${invalidInfo}`;
   }
 
   const statsKeys = items.map(glueStatsItem);
@@ -584,7 +584,8 @@ const validate = (ctx: StatsContext, items: StatsItem[]): string => {
 
   if (uniqSize !== items.length) {
     const duplicates = findDuplicateStrings(statsKeys);
-    return `Found unexpected duplicates with ${uniqSize} different from ${items.length} --> ${duplicates}`;
+    return `Found ${items.length -
+      uniqSize} unexpected duplicates --> ${duplicates}`;
   }
 
   return '';
