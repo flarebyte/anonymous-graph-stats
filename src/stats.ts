@@ -288,7 +288,7 @@ const countStringSerie = (name: string, values: string[]): StatsItem[] => {
           text: 'words',
           value: median(wordsCount),
         },
-      ].concat(toStatsItemList(`${name} charpage `, 'count', pageStats));
+      ].concat(toStatsItemList(`${name} charpage`, 'count', pageStats));
 };
 
 const countAttributes = (graph: Graph): StatsItem[] => {
@@ -444,13 +444,97 @@ const toCSV = (items: StatsItem[], delimiter: string): string[] => {
   );
 };
 
+const checkFormatStatsItem = (delimiter: string) => (line: string): boolean =>
+  line.split(delimiter).length === 4;
+
 const parseStatsItem = (delimiter: string) => (line: string): StatsItem => {
   const [name, action, text, value] = line.split(delimiter);
   return { name, action, text, value: Number(value) };
 };
 
 const fromCSV = (lines: string[], delimiter: string): StatsItem[] => {
-  return lines.map(parseStatsItem(delimiter));
+  return lines
+    .filter(checkFormatStatsItem(delimiter))
+    .map(parseStatsItem(delimiter));
 };
 
-export { getStats, toCSV, fromCSV };
+const validNames = new Set([
+  'alternateName',
+  'alternateName charpage',
+  'attributeMetadataList',
+  'attributeMetadataList unitText',
+  'edgeList',
+  'edgeList optionalValueList',
+  'edgeList optionalValueList charpage',
+  'edgeList value',
+  'edgeList value charpage',
+  'graph',
+  'name',
+  'name charpage',
+  'nodeList',
+  'nodeList edgeList',
+  'nodeList optionalValueList',
+  'nodeList optionalValueList charpage',
+  'nodeList value',
+  'nodeList value charpage',
+]);
+
+const validActions = new Set([
+  'count',
+  'count max',
+  'count median',
+  'count min',
+  'count quartile first',
+  'count quartile third',
+  'empty count',
+  'unique count',
+  'unique intersection',
+]);
+
+const validCustomText = new RegExp('^[A-Za-z0-9 +]{2,30}$').compile();
+
+const findDuplicateStrings = (arr: string[]): string[] => {
+  const sorted_arr = arr.slice().sort();
+  let results = [];
+  for (let i = 0; i < sorted_arr.length - 1; i++) {
+    if (sorted_arr[i + 1] === sorted_arr[i]) {
+      results.push(sorted_arr[i]);
+    }
+  }
+  return results;
+};
+const validate = (ctx: StatsContext, items: StatsItem[]): string => {
+  if (items.length < 30) {
+    return 'Too few stats items recorded';
+  }
+  if (items.length > 1000) {
+    return 'Too many stats items recorded';
+  }
+  const validText = new Set(ctx.supportedTags.concat(ctx.supportedUnits));
+  const validateStatsItem = (value: StatsItem): boolean =>
+    !(
+      validNames.has(value.name) &&
+      validActions.has(value.action) &&
+      !isNaN(Number(value.value)) &&
+      (validText.has(value.text) || validCustomText.test(value.text))
+    );
+
+  const invalidItemCount = items.filter(validateStatsItem).length;
+  if (invalidItemCount > 0) {
+    return `Has ${invalidItemCount} invalid items`;
+  }
+
+  const glueStatsItem = (value: StatsItem): string =>
+    `${value.name}---${value.action}---${value.text}`;
+  const statsKeys = items.map(glueStatsItem);
+  const uniqSize = new Set(statsKeys).size;
+
+  if (uniqSize !== items.length) {
+    const duplicates = findDuplicateStrings(statsKeys);
+    return `Found unexpected duplicates with ${uniqSize} different from ${items.length}: ${duplicates}`;
+  }
+
+  return '';
+};
+
+export { getStats, toCSV, fromCSV, validate };

@@ -288,13 +288,13 @@
       "value": 1
     },
     {
-      "name": "nodeList value charpage ",
+      "name": "nodeList value charpage",
       "action": "count",
       "text": "1",
       "value": 4
     },
     {
-      "name": "nodeList value charpage ",
+      "name": "nodeList value charpage",
       "action": "count",
       "text": "2",
       "value": 14
@@ -348,7 +348,7 @@
       "value": 1
     },
     {
-      "name": "edgeList value charpage ",
+      "name": "edgeList value charpage",
       "action": "count",
       "text": "1",
       "value": 13
@@ -402,37 +402,37 @@
       "value": 1
     },
     {
-      "name": "nodeList optionalValueList charpage ",
+      "name": "nodeList optionalValueList charpage",
       "action": "count",
       "text": "125",
       "value": 2
     },
     {
-      "name": "nodeList optionalValueList charpage ",
+      "name": "nodeList optionalValueList charpage",
       "action": "count",
       "text": "126",
       "value": 2
     },
     {
-      "name": "nodeList optionalValueList charpage ",
+      "name": "nodeList optionalValueList charpage",
       "action": "count",
       "text": "273",
       "value": 1
     },
     {
-      "name": "nodeList optionalValueList charpage ",
+      "name": "nodeList optionalValueList charpage",
       "action": "count",
       "text": "349",
       "value": 1
     },
     {
-      "name": "nodeList optionalValueList charpage ",
+      "name": "nodeList optionalValueList charpage",
       "action": "count",
       "text": "366",
       "value": 1
     },
     {
-      "name": "nodeList optionalValueList charpage ",
+      "name": "nodeList optionalValueList charpage",
       "action": "count",
       "text": "392",
       "value": 1
@@ -486,7 +486,7 @@
       "value": 1
     },
     {
-      "name": "edgeList optionalValueList charpage ",
+      "name": "edgeList optionalValueList charpage",
       "action": "count",
       "text": "1286",
       "value": 3
@@ -540,13 +540,13 @@
       "value": 1.5
     },
     {
-      "name": "name charpage ",
+      "name": "name charpage",
       "action": "count",
       "text": "1",
       "value": 15
     },
     {
-      "name": "name charpage ",
+      "name": "name charpage",
       "action": "count",
       "text": "2",
       "value": 31
@@ -600,25 +600,25 @@
       "value": 1
     },
     {
-      "name": "alternateName charpage ",
+      "name": "alternateName charpage",
       "action": "count",
       "text": "1",
       "value": 2
     },
     {
-      "name": "alternateName charpage ",
+      "name": "alternateName charpage",
       "action": "count",
       "text": "2",
       "value": 3
     },
     {
-      "name": "alternateName charpage ",
+      "name": "alternateName charpage",
       "action": "count",
       "text": "243",
       "value": 1
     },
     {
-      "name": "alternateName charpage ",
+      "name": "alternateName charpage",
       "action": "count",
       "text": "369",
       "value": 1

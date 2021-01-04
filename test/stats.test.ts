@@ -1,4 +1,4 @@
-import { getStats, toCSV, fromCSV } from '../src/stats';
+import { getStats, toCSV, fromCSV, validate } from '../src/stats';
 import { Graph, StatsContext } from '../src/model';
 import fs from 'fs';
 
@@ -37,5 +37,17 @@ describe('get statistics for graph', () => {
     expect(asItems).toHaveLength(lines.length);
     expect(asLines).toHaveLength(lines.length);
     expect(asLines).toEqual(lines);
+  });
+});
+
+describe('validation for statistics', () => {
+  it('validate successfully', () => {
+    const ctx: StatsContext = {
+      supportedTags: ['alpha', 'beta', 'delta'],
+      supportedUnits: ['km', 'GBP'],
+    };
+    const lines = fixtureExpectedAlphaCsv.split('\n');
+    const actual = validate(ctx, fromCSV(lines, ','));
+    expect(actual).toEqual('');
   });
 });
