@@ -438,10 +438,12 @@ const getStats = (ctx: StatsContext, graph: Graph): StatsItem[] => {
 };
 
 const toCSV = (items: StatsItem[], delimiter: string): string[] => {
-  return items.map(
-    i =>
-      `${i.name}${delimiter}${i.action}${delimiter}${i.text}${delimiter}${i.value}`
-  );
+  return items
+    .map(
+      i =>
+        `${i.name}${delimiter}${i.action}${delimiter}${i.text}${delimiter}${i.value}`
+    )
+    .sort();
 };
 
 const checkFormatStatsItem = (delimiter: string) => (line: string): boolean =>
@@ -468,7 +470,6 @@ const validNames = new Set([
   'edgeList attributeList optionalValueList charpage',
   'edgeList attributeList value',
   'edgeList attributeList value charpage',
-  'graph',
   'attributeMetadataList name',
   'attributeMetadataList name charpage',
   'nodeList',
