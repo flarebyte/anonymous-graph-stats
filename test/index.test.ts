@@ -1,5 +1,11 @@
-import { getStats, toCSV, fromCSV, validate } from '../src/stats';
-import { Graph, StatsContext } from '../src/model';
+import {
+  getStats,
+  toCSV,
+  fromCSV,
+  validate,
+  Graph,
+  StatsContext,
+} from '../src';
 import fs from 'fs';
 
 const fixtureAlpha: Graph = require('./fixture-graph-alpha.json');
