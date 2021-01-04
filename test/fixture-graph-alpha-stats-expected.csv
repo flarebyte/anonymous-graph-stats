@@ -1,17 +1,17 @@
-graph,count,attributeMetadataList,6
-graph,count,nodeList,4
-graph,count,edgeList,3
-attributeMetadataList,count,alpha,3
-attributeMetadataList,count,beta,1
-nodeList,count,alpha,2
-edgeList,count,alpha,3
-edgeList,count,delta,1
+attributeMetadataList,count,,6
+nodeList,count,,4
+edgeList,count,,3
+attributeMetadataList tagSet,count,alpha,3
+attributeMetadataList tagSet,count,beta,1
+nodeList tagSet,count,alpha,2
+edgeList tagSet,count,alpha,3
+edgeList tagSet,count,delta,1
 attributeMetadataList unitText,count,km,1
 attributeMetadataList unitText,count,GBP,2
-attributeMetadataList,empty count,name,1
-attributeMetadataList,empty count,alternateName,4
-attributeMetadataList,empty count,unitText,2
-attributeMetadataList,empty count,tagSet,2
+attributeMetadataList name,empty count,,1
+attributeMetadataList alternateName,empty count,,4
+attributeMetadataList unitText,empty count,,2
+attributeMetadataList tagSet,empty count,,2
 attributeMetadataList,count,duplicate,0
 attributeMetadataList,count,unused,3
 attributeMetadataList,count,declared,6
@@ -80,25 +80,25 @@ edgeList attributeList optionalValueList,count min,words,1
 edgeList attributeList optionalValueList,count max,words,1
 edgeList attributeList optionalValueList,count median,words,1
 edgeList attributeList optionalValueList charpage,count,1286,3
-name,count min,chars,0
-name,count max,chars,16
-name,count median,chars,7.5
-name,count quartile first,chars,4.25
-name,count quartile third,chars,10.75
-name,count min,words,1
-name,count max,words,3
-name,count median,words,1.5
-name charpage,count,1,15
-name charpage,count,2,31
-alternateName,count min,chars,0
-alternateName,count max,chars,5
-alternateName,count median,chars,0
-alternateName,count quartile first,chars,0
-alternateName,count quartile third,chars,1.5
-alternateName,count min,words,1
-alternateName,count max,words,1
-alternateName,count median,words,1
-alternateName charpage,count,1,2
-alternateName charpage,count,2,3
-alternateName charpage,count,243,1
-alternateName charpage,count,369,1
+attributeMetadataList name,count min,chars,0
+attributeMetadataList name,count max,chars,16
+attributeMetadataList name,count median,chars,7.5
+attributeMetadataList name,count quartile first,chars,4.25
+attributeMetadataList name,count quartile third,chars,10.75
+attributeMetadataList name,count min,words,1
+attributeMetadataList name,count max,words,3
+attributeMetadataList name,count median,words,1.5
+attributeMetadataList name charpage,count,1,15
+attributeMetadataList name charpage,count,2,31
+attributeMetadataList alternateName,count min,chars,0
+attributeMetadataList alternateName,count max,chars,5
+attributeMetadataList alternateName,count median,chars,0
+attributeMetadataList alternateName,count quartile first,chars,0
+attributeMetadataList alternateName,count quartile third,chars,1.5
+attributeMetadataList alternateName,count min,words,1
+attributeMetadataList alternateName,count max,words,1
+attributeMetadataList alternateName,count median,words,1
+attributeMetadataList alternateName charpage,count,1,2
+attributeMetadataList alternateName charpage,count,2,3
+attributeMetadataList alternateName charpage,count,243,1
+attributeMetadataList alternateName charpage,count,369,1

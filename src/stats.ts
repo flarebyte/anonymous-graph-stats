@@ -54,17 +54,17 @@ const countTagsInList = (
 const countByTags = (ctx: StatsContext, graph: Graph): StatsItem[] => {
   const supportedTags = new Set<string>(ctx.supportedTags);
   const metaStats = countTagsInList(
-    'attributeMetadataList',
+    'attributeMetadataList tagSet',
     supportedTags,
     graph.attributeMetadataList
   );
   const nodeStats = countTagsInList(
-    'nodeList',
+    'nodeList tagSet',
     supportedTags,
     graph.nodeList.flatMap(n => n.attributeList)
   );
   const edgeStats = countTagsInList(
-    'edgeList',
+    'edgeList tagSet',
     supportedTags,
     graph.edgeList.flatMap(n => n.attributeList)
   );
@@ -84,36 +84,36 @@ const isEmptyLength = (value: string): boolean => value.length === 0;
 const isEmptyListLength = (values: any[]): boolean => values.length === 0;
 
 const countEmptyMetadata = (graph: Graph): StatsItem[] => {
-  const name = 'attributeMetadataList';
   const action = 'empty count';
+  const text = '';
   return [
     {
-      name,
+      name: 'attributeMetadataList name',
       action,
-      text: 'name',
+      text,
       value: graph.attributeMetadataList.map(m => m.name).filter(isEmptyLength)
         .length,
     },
     {
-      name,
+      name: 'attributeMetadataList alternateName',
       action,
-      text: 'alternateName',
+      text,
       value: graph.attributeMetadataList
         .map(m => m.alternateName)
         .filter(isEmptyLength).length,
     },
     {
-      name,
+      name: 'attributeMetadataList unitText',
       action,
-      text: 'unitText',
+      text,
       value: graph.attributeMetadataList
         .map(m => m.unitText)
         .filter(isEmptyLength).length,
     },
     {
-      name,
+      name: 'attributeMetadataList tagSet',
       action,
-      text: 'tagSet',
+      text,
       value: graph.attributeMetadataList
         .map(m => m.tagSet)
         .filter(isEmptyListLength).length,
@@ -122,25 +122,25 @@ const countEmptyMetadata = (graph: Graph): StatsItem[] => {
 };
 
 const countRootGraph = (graph: Graph): StatsItem[] => {
-  const name = 'graph';
+  const text = '';
   const action = 'count';
   return [
     {
-      name,
+      name: 'attributeMetadataList',
       action,
-      text: 'attributeMetadataList',
+      text,
       value: graph.attributeMetadataList.length,
     },
     {
-      name,
+      name: 'nodeList',
       action,
-      text: 'nodeList',
+      text,
       value: graph.nodeList.length,
     },
     {
-      name,
+      name: 'edgeList',
       action,
-      text: 'edgeList',
+      text,
       value: graph.edgeList.length,
     },
   ];
@@ -417,11 +417,11 @@ const countAttributes = (graph: Graph): StatsItem[] => {
 
 const countAttributeMetadata = (graph: Graph): StatsItem[] => {
   return countStringSerie(
-    'name',
+    'attributeMetadataList name',
     graph.attributeMetadataList.map(a => a.name)
   ).concat(
     countStringSerie(
-      'alternateName',
+      'attributeMetadataList alternateName',
       graph.attributeMetadataList.map(a => a.alternateName)
     )
   );
@@ -459,8 +459,8 @@ const fromCSV = (lines: string[], delimiter: string): StatsItem[] => {
 };
 
 const validNames = new Set([
-  'alternateName',
-  'alternateName charpage',
+  'attributeMetadataList alternateName',
+  'attributeMetadataList alternateName charpage',
   'attributeMetadataList',
   'attributeMetadataList unitText',
   'edgeList',
@@ -469,8 +469,8 @@ const validNames = new Set([
   'edgeList attributeList value',
   'edgeList attributeList value charpage',
   'graph',
-  'name',
-  'name charpage',
+  'attributeMetadataList name',
+  'attributeMetadataList name charpage',
   'nodeList',
   'nodeList+edgeList attributeList',
   'nodeList attributeList optionalValueList',
