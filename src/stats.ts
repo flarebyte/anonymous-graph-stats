@@ -461,23 +461,28 @@ const fromCSV = (lines: string[], delimiter: string): StatsItem[] => {
 };
 
 const validNames = new Set([
-  'attributeMetadataList alternateName',
   'attributeMetadataList alternateName charpage',
-  'attributeMetadataList',
-  'attributeMetadataList unitText',
-  'edgeList',
-  'edgeList attributeList optionalValueList',
-  'edgeList attributeList optionalValueList charpage',
-  'edgeList attributeList value',
-  'edgeList attributeList value charpage',
-  'attributeMetadataList name',
+  'attributeMetadataList alternateName',
   'attributeMetadataList name charpage',
+  'attributeMetadataList name',
+  'attributeMetadataList tagSet',
+  'attributeMetadataList unitText',
+  'attributeMetadataList',
+  'edgeList attributeList optionalValueList charpage',
+  'edgeList attributeList optionalValueList',
+  'edgeList attributeList value charpage',
+  'edgeList attributeList value',
+  'edgeList attributeList',
+  'edgeList tagSet',
+  'edgeList',
+  'nodeList attributeList optionalValueList charpage',
+  'nodeList attributeList optionalValueList',
+  'nodeList attributeList value charpage',
+  'nodeList attributeList value',
+  'nodeList attributeList',
+  'nodeList tagSet',
   'nodeList',
   'nodeList+edgeList attributeList',
-  'nodeList attributeList optionalValueList',
-  'nodeList attributeList optionalValueList charpage',
-  'nodeList attributeList value',
-  'nodeList attributeList value charpage',
 ]);
 
 const validActions = new Set([
@@ -506,10 +511,10 @@ const findDuplicateStrings = (arr: string[]): string[] => {
 };
 const validate = (ctx: StatsContext, items: StatsItem[]): string => {
   if (items.length < 30) {
-    return 'Too few stats items recorded';
+    return `Too few stats items recorded: ${items.length}`;
   }
   if (items.length > 1000) {
-    return 'Too many stats items recorded';
+    return `Too many stats items recorded: ${items.length}`;
   }
   const validText = new Set(ctx.supportedTags.concat(ctx.supportedUnits));
   const validateStatsItem = (value: StatsItem): boolean =>
@@ -520,19 +525,22 @@ const validate = (ctx: StatsContext, items: StatsItem[]): string => {
       (validText.has(value.text) || validCustomText.test(value.text))
     );
 
-  const invalidItemCount = items.filter(validateStatsItem).length;
-  if (invalidItemCount > 0) {
-    return `Has ${invalidItemCount} invalid items`;
-  }
-
   const glueStatsItem = (value: StatsItem): string =>
     `${value.name}---${value.action}---${value.text}`;
+
+  const invalidItems = items.filter(validateStatsItem);
+  const invalidItemCount = invalidItems.length;
+  if (invalidItemCount > 0) {
+    const invalidInfo = invalidItems.map(glueStatsItem).join(';');
+    return `Has ${invalidItemCount} invalid items --> ${invalidInfo}`;
+  }
+
   const statsKeys = items.map(glueStatsItem);
   const uniqSize = new Set(statsKeys).size;
 
   if (uniqSize !== items.length) {
     const duplicates = findDuplicateStrings(statsKeys);
-    return `Found unexpected duplicates with ${uniqSize} different from ${items.length}: ${duplicates}`;
+    return `Found unexpected duplicates with ${uniqSize} different from ${items.length} --> ${duplicates}`;
   }
 
   return '';
