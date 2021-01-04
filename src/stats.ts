@@ -347,59 +347,59 @@ const countAttributes = (graph: Graph): StatsItem[] => {
       value: undeclaredAttrsCount,
     },
     {
-      name: 'nodeList',
+      name: 'nodeList attributeList',
       action: 'unique count',
       text: 'used',
       value: attrInNodesSet.size,
     },
     {
-      name: 'edgeList',
+      name: 'edgeList attributeList',
       action: 'unique count',
       text: 'used',
       value: attrInEdgeSet.size,
     },
     {
-      name: 'nodeList edgeList',
+      name: 'nodeList+edgeList attributeList',
       action: 'unique intersection',
       text: 'used',
       value: commonAttrsCount,
     },
     {
-      name: 'nodeList',
+      name: 'nodeList attributeList',
       action: 'count',
       text: 'used',
       value: attrInNodes.length,
     },
     {
-      name: 'edgeList',
+      name: 'edgeList attributeList',
       action: 'count',
       text: 'used',
       value: attrInEdges.length,
     },
     {
-      name: 'nodeList',
+      name: 'nodeList attributeList',
       action: 'count min',
       text: '',
       value: attrInNodes.length,
     },
   ]
-    .concat(countAttrSerie('nodeList', attrCountByNode))
-    .concat(countAttrSerie('edgeList', attrCountByEdge))
+    .concat(countAttrSerie('nodeList attributeList', attrCountByNode))
+    .concat(countAttrSerie('edgeList attributeList', attrCountByEdge))
     .concat(
       countStringSerie(
-        'nodeList value',
+        'nodeList attributeList value',
         graph.nodeList.flatMap(n => n.attributeList).map(a => a.value)
       )
     )
     .concat(
       countStringSerie(
-        'edgeList value',
+        'edgeList attributeList value',
         graph.edgeList.flatMap(n => n.attributeList).map(a => a.value)
       )
     )
     .concat(
       countStringSerie(
-        'nodeList optionalValueList',
+        'nodeList attributeList optionalValueList',
         graph.nodeList
           .flatMap(n => n.attributeList)
           .flatMap(a => a.optionalValueList)
@@ -407,7 +407,7 @@ const countAttributes = (graph: Graph): StatsItem[] => {
     )
     .concat(
       countStringSerie(
-        'edgeList optionalValueList',
+        'edgeList attributeList optionalValueList',
         graph.edgeList
           .flatMap(n => n.attributeList)
           .flatMap(a => a.optionalValueList)
@@ -464,19 +464,19 @@ const validNames = new Set([
   'attributeMetadataList',
   'attributeMetadataList unitText',
   'edgeList',
-  'edgeList optionalValueList',
-  'edgeList optionalValueList charpage',
-  'edgeList value',
-  'edgeList value charpage',
+  'edgeList attributeList optionalValueList',
+  'edgeList attributeList optionalValueList charpage',
+  'edgeList attributeList value',
+  'edgeList attributeList value charpage',
   'graph',
   'name',
   'name charpage',
   'nodeList',
-  'nodeList edgeList',
-  'nodeList optionalValueList',
-  'nodeList optionalValueList charpage',
-  'nodeList value',
-  'nodeList value charpage',
+  'nodeList+edgeList attributeList',
+  'nodeList attributeList optionalValueList',
+  'nodeList attributeList optionalValueList charpage',
+  'nodeList attributeList value',
+  'nodeList attributeList value charpage',
 ]);
 
 const validActions = new Set([

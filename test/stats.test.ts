@@ -26,7 +26,7 @@ describe('get statistics for graph', () => {
       supportedUnits: ['km', 'GBP'],
     };
     const actual = toCSV(getStats(ctx, fixtureAlpha), ',').join('\n');
-    //console.log(actual);
+    console.log(actual);
     expect(actual).toEqual(fixtureExpectedAlphaCsv);
   });
 
