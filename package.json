@@ -1,5 +1,6 @@
 {
   "version": "0.1.0",
+  "description": "Anonymous statistics for graph objects in Typescript",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -39,11 +40,11 @@
   "size-limit": [
     {
       "path": "dist/anonymous-graph-stats.cjs.production.min.js",
-      "limit": "10 KB"
+      "limit": "1 KB"
     },
     {
       "path": "dist/anonymous-graph-stats.esm.js",
-      "limit": "10 KB"
+      "limit": "1 KB"
     }
   ],
   "devDependencies": {
