@@ -5,6 +5,7 @@ import {
   validate,
   parseAsGraph,
   compareStats,
+  dateTimeToStats,
 } from '../src';
 import fs from 'fs';
 
@@ -139,5 +140,27 @@ describe('compare statistics for graph', () => {
     expect(actual.modified).toHaveLength(1);
     expect(actual.identical).toHaveLength(defaultStats.length - 1);
     expect(actual.modified[0].value).toEqual(100);
+  });
+});
+
+describe('extract the date time info', () => {
+  it('accepts an ISO date', () => {
+    const defaultStats = getStats(defaultCtx, fixtureAlpha);
+    const dateValue = new Date('2021-01-05T10:05:55Z');
+    const actualDateStats = dateTimeToStats('date', 'alpha', dateValue);
+    const validation = validate(
+      defaultCtx,
+      defaultStats.concat(actualDateStats)
+    );
+    const expected = [
+      { name: 'date', action: 'year', text: 'alpha', value: 2021 },
+      { name: 'date', action: 'month', text: 'alpha', value: 1 },
+      { name: 'date', action: 'weekday', text: 'alpha', value: 2 },
+      { name: 'date', action: 'hours', text: 'alpha', value: 10 },
+      { name: 'date', action: 'epoch days', text: 'alpha', value: 18632 },
+    ];
+    expect(validation).toHaveLength(0);
+    expect(actualDateStats).toHaveLength(5);
+    expect(actualDateStats).toEqual(expected);
   });
 });

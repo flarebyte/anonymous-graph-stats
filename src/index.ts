@@ -537,6 +537,7 @@ const validNames = new Set([
   'nodeList tagSet',
   'nodeList',
   'nodeList+edgeList attributeList',
+  'date',
 ]);
 
 const validActions = new Set([
@@ -549,6 +550,11 @@ const validActions = new Set([
   'empty count',
   'unique count',
   'unique intersection',
+  'year',
+  'month',
+  'weekday',
+  'hours',
+  'epoch days',
 ]);
 
 const validCustomText = new RegExp('^[A-Za-z0-9 +]{2,30}$').compile();
@@ -632,4 +638,51 @@ const compareStats = (ref: StatsItem[], other: StatsItem[]): StatsItemDiff => {
   };
 };
 
-export { getStats, toCSV, fromCSV, validate, compareStats, parseAsGraph };
+const dateTimeToStats = (
+  name: string,
+  text: string,
+  dateValue: Date
+): StatsItem[] => {
+  return [
+    {
+      name,
+      action: 'year',
+      text,
+      value: dateValue.getUTCFullYear(),
+    },
+    {
+      name,
+      action: 'month',
+      text,
+      value: dateValue.getUTCMonth() + 1,
+    },
+    {
+      name,
+      action: 'weekday',
+      text,
+      value: dateValue.getUTCDay(),
+    },
+    {
+      name,
+      action: 'hours',
+      text,
+      value: dateValue.getUTCHours(),
+    },
+    {
+      name,
+      action: 'epoch days',
+      text,
+      value: Math.floor(dateValue.getTime() / (1000 * 3600 * 24)),
+    },
+  ];
+};
+
+export {
+  getStats,
+  toCSV,
+  fromCSV,
+  validate,
+  compareStats,
+  parseAsGraph,
+  dateTimeToStats,
+};
