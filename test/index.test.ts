@@ -1,4 +1,11 @@
-import { getStats, toCSV, fromCSV, validate, parseAsGraph } from '../src';
+import {
+  getStats,
+  toCSV,
+  fromCSV,
+  validate,
+  parseAsGraph,
+  compareStats,
+} from '../src';
 import fs from 'fs';
 
 const fixtureAlpha = parseAsGraph(
@@ -72,5 +79,65 @@ describe('validation for statistics', () => {
     samples.push(duplicate);
     const actual = validate(defaultCtx, fromCSV(samples, ','));
     expect(actual.split(' -->')[0]).toEqual('Found 1 unexpected duplicates');
+  });
+});
+
+describe('compare statistics for graph', () => {
+  it('detects no changes', () => {
+    const defaultStats = getStats(defaultCtx, fixtureAlpha);
+    const actual = compareStats(defaultStats, defaultStats);
+    expect(actual.changes).toEqual(0);
+    expect(actual.added).toHaveLength(0);
+    expect(actual.removed).toHaveLength(0);
+    expect(actual.modified).toHaveLength(0);
+    expect(actual.identical).toHaveLength(defaultStats.length);
+  });
+
+  it('detects added stats', () => {
+    const defaultStats = getStats(defaultCtx, fixtureAlpha);
+    const addedStatsValue = {
+      name: 'new',
+      action: 'count',
+      text: '',
+      value: 1,
+    };
+    const newStats = [addedStatsValue].concat(defaultStats);
+    const actual = compareStats(defaultStats, newStats);
+    expect(actual.changes).toEqual(1);
+    expect(actual.added).toHaveLength(1);
+    expect(actual.removed).toHaveLength(0);
+    expect(actual.modified).toHaveLength(0);
+    expect(actual.identical).toHaveLength(defaultStats.length);
+    expect(actual.added[0]).toEqual(addedStatsValue);
+  });
+
+  it('detects removed stats', () => {
+    const defaultStats = getStats(defaultCtx, fixtureAlpha);
+    const [removed, ...newStats] = defaultStats;
+    const actual = compareStats(defaultStats, newStats);
+    expect(actual.changes).toEqual(1);
+    expect(actual.added).toHaveLength(0);
+    expect(actual.removed).toHaveLength(1);
+    expect(actual.modified).toHaveLength(0);
+    expect(actual.identical).toHaveLength(defaultStats.length - 1);
+    expect(actual.removed[0]).toEqual(removed);
+  });
+
+  it('detects modified stats', () => {
+    const defaultStats = getStats(defaultCtx, fixtureAlpha);
+    const [...newStats] = defaultStats;
+    newStats[0] = {
+      name: defaultStats[0].name,
+      action: defaultStats[0].action,
+      text: defaultStats[0].text,
+      value: 100,
+    };
+    const actual = compareStats(defaultStats, newStats);
+    expect(actual.changes).toEqual(1);
+    expect(actual.added).toHaveLength(0);
+    expect(actual.removed).toHaveLength(0);
+    expect(actual.modified).toHaveLength(1);
+    expect(actual.identical).toHaveLength(defaultStats.length - 1);
+    expect(actual.modified[0].value).toEqual(100);
   });
 });
