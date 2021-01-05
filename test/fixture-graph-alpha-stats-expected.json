@@ -1,0 +1,620 @@
+[
+  {
+    "name": "attributeMetadataList",
+    "action": "count",
+    "text": "",
+    "value": 6
+  },
+  {
+    "name": "nodeList",
+    "action": "count",
+    "text": "",
+    "value": 4
+  },
+  {
+    "name": "edgeList",
+    "action": "count",
+    "text": "",
+    "value": 3
+  },
+  {
+    "name": "attributeMetadataList tagSet",
+    "action": "count",
+    "text": "alpha",
+    "value": 3
+  },
+  {
+    "name": "attributeMetadataList tagSet",
+    "action": "count",
+    "text": "beta",
+    "value": 1
+  },
+  {
+    "name": "nodeList tagSet",
+    "action": "count",
+    "text": "alpha",
+    "value": 2
+  },
+  {
+    "name": "edgeList tagSet",
+    "action": "count",
+    "text": "alpha",
+    "value": 3
+  },
+  {
+    "name": "edgeList tagSet",
+    "action": "count",
+    "text": "delta",
+    "value": 1
+  },
+  {
+    "name": "attributeMetadataList unitText",
+    "action": "count",
+    "text": "km",
+    "value": 1
+  },
+  {
+    "name": "attributeMetadataList unitText",
+    "action": "count",
+    "text": "GBP",
+    "value": 2
+  },
+  {
+    "name": "attributeMetadataList name",
+    "action": "empty count",
+    "text": "",
+    "value": 1
+  },
+  {
+    "name": "attributeMetadataList alternateName",
+    "action": "empty count",
+    "text": "",
+    "value": 4
+  },
+  {
+    "name": "attributeMetadataList unitText",
+    "action": "empty count",
+    "text": "",
+    "value": 2
+  },
+  {
+    "name": "attributeMetadataList tagSet",
+    "action": "empty count",
+    "text": "",
+    "value": 2
+  },
+  {
+    "name": "attributeMetadataList",
+    "action": "count",
+    "text": "duplicate",
+    "value": 0
+  },
+  {
+    "name": "attributeMetadataList",
+    "action": "count",
+    "text": "unused",
+    "value": 3
+  },
+  {
+    "name": "attributeMetadataList",
+    "action": "count",
+    "text": "declared",
+    "value": 6
+  },
+  {
+    "name": "attributeMetadataList",
+    "action": "count",
+    "text": "undeclared",
+    "value": 1
+  },
+  {
+    "name": "nodeList attributeList",
+    "action": "unique count",
+    "text": "used",
+    "value": 1
+  },
+  {
+    "name": "edgeList attributeList",
+    "action": "unique count",
+    "text": "used",
+    "value": 3
+  },
+  {
+    "name": "nodeList+edgeList attributeList",
+    "action": "unique intersection",
+    "text": "used",
+    "value": 0
+  },
+  {
+    "name": "nodeList attributeList",
+    "action": "count",
+    "text": "used",
+    "value": 4
+  },
+  {
+    "name": "edgeList attributeList",
+    "action": "count",
+    "text": "used",
+    "value": 5
+  },
+  {
+    "name": "nodeList attributeList",
+    "action": "count min",
+    "text": "",
+    "value": 1
+  },
+  {
+    "name": "nodeList attributeList",
+    "action": "count max",
+    "text": "",
+    "value": 1
+  },
+  {
+    "name": "nodeList attributeList",
+    "action": "count median",
+    "text": "",
+    "value": 1
+  },
+  {
+    "name": "nodeList attributeList",
+    "action": "count",
+    "text": "frequency 1",
+    "value": 4
+  },
+  {
+    "name": "nodeList attributeList",
+    "action": "count",
+    "text": "frequency 2",
+    "value": 0
+  },
+  {
+    "name": "nodeList attributeList",
+    "action": "count",
+    "text": "frequency 3",
+    "value": 0
+  },
+  {
+    "name": "nodeList attributeList",
+    "action": "count",
+    "text": "frequency 4",
+    "value": 0
+  },
+  {
+    "name": "nodeList attributeList",
+    "action": "count",
+    "text": "frequency 5+",
+    "value": 0
+  },
+  {
+    "name": "edgeList attributeList",
+    "action": "count min",
+    "text": "",
+    "value": 1
+  },
+  {
+    "name": "edgeList attributeList",
+    "action": "count max",
+    "text": "",
+    "value": 2
+  },
+  {
+    "name": "edgeList attributeList",
+    "action": "count median",
+    "text": "",
+    "value": 2
+  },
+  {
+    "name": "edgeList attributeList",
+    "action": "count",
+    "text": "frequency 1",
+    "value": 1
+  },
+  {
+    "name": "edgeList attributeList",
+    "action": "count",
+    "text": "frequency 2",
+    "value": 2
+  },
+  {
+    "name": "edgeList attributeList",
+    "action": "count",
+    "text": "frequency 3",
+    "value": 0
+  },
+  {
+    "name": "edgeList attributeList",
+    "action": "count",
+    "text": "frequency 4",
+    "value": 0
+  },
+  {
+    "name": "edgeList attributeList",
+    "action": "count",
+    "text": "frequency 5+",
+    "value": 0
+  },
+  {
+    "name": "nodeList attributeList value",
+    "action": "count min",
+    "text": "chars",
+    "value": 3
+  },
+  {
+    "name": "nodeList attributeList value",
+    "action": "count max",
+    "text": "chars",
+    "value": 6
+  },
+  {
+    "name": "nodeList attributeList value",
+    "action": "count median",
+    "text": "chars",
+    "value": 4.5
+  },
+  {
+    "name": "nodeList attributeList value",
+    "action": "count quartile first",
+    "text": "chars",
+    "value": 3.75
+  },
+  {
+    "name": "nodeList attributeList value",
+    "action": "count quartile third",
+    "text": "chars",
+    "value": 5.25
+  },
+  {
+    "name": "nodeList attributeList value",
+    "action": "count min",
+    "text": "words",
+    "value": 1
+  },
+  {
+    "name": "nodeList attributeList value",
+    "action": "count max",
+    "text": "words",
+    "value": 1
+  },
+  {
+    "name": "nodeList attributeList value",
+    "action": "count median",
+    "text": "words",
+    "value": 1
+  },
+  {
+    "name": "nodeList attributeList value charpage",
+    "action": "count",
+    "text": "1",
+    "value": 4
+  },
+  {
+    "name": "nodeList attributeList value charpage",
+    "action": "count",
+    "text": "2",
+    "value": 14
+  },
+  {
+    "name": "edgeList attributeList value",
+    "action": "count min",
+    "text": "chars",
+    "value": 2
+  },
+  {
+    "name": "edgeList attributeList value",
+    "action": "count max",
+    "text": "chars",
+    "value": 3
+  },
+  {
+    "name": "edgeList attributeList value",
+    "action": "count median",
+    "text": "chars",
+    "value": 3
+  },
+  {
+    "name": "edgeList attributeList value",
+    "action": "count quartile first",
+    "text": "chars",
+    "value": 2
+  },
+  {
+    "name": "edgeList attributeList value",
+    "action": "count quartile third",
+    "text": "chars",
+    "value": 3
+  },
+  {
+    "name": "edgeList attributeList value",
+    "action": "count min",
+    "text": "words",
+    "value": 1
+  },
+  {
+    "name": "edgeList attributeList value",
+    "action": "count max",
+    "text": "words",
+    "value": 1
+  },
+  {
+    "name": "edgeList attributeList value",
+    "action": "count median",
+    "text": "words",
+    "value": 1
+  },
+  {
+    "name": "edgeList attributeList value charpage",
+    "action": "count",
+    "text": "1",
+    "value": 13
+  },
+  {
+    "name": "nodeList attributeList optionalValueList",
+    "action": "count min",
+    "text": "chars",
+    "value": 1
+  },
+  {
+    "name": "nodeList attributeList optionalValueList",
+    "action": "count max",
+    "text": "chars",
+    "value": 4
+  },
+  {
+    "name": "nodeList attributeList optionalValueList",
+    "action": "count median",
+    "text": "chars",
+    "value": 3
+  },
+  {
+    "name": "nodeList attributeList optionalValueList",
+    "action": "count quartile first",
+    "text": "chars",
+    "value": 2
+  },
+  {
+    "name": "nodeList attributeList optionalValueList",
+    "action": "count quartile third",
+    "text": "chars",
+    "value": 3.5
+  },
+  {
+    "name": "nodeList attributeList optionalValueList",
+    "action": "count min",
+    "text": "words",
+    "value": 1
+  },
+  {
+    "name": "nodeList attributeList optionalValueList",
+    "action": "count max",
+    "text": "words",
+    "value": 1
+  },
+  {
+    "name": "nodeList attributeList optionalValueList",
+    "action": "count median",
+    "text": "words",
+    "value": 1
+  },
+  {
+    "name": "nodeList attributeList optionalValueList charpage",
+    "action": "count",
+    "text": "125",
+    "value": 2
+  },
+  {
+    "name": "nodeList attributeList optionalValueList charpage",
+    "action": "count",
+    "text": "126",
+    "value": 2
+  },
+  {
+    "name": "nodeList attributeList optionalValueList charpage",
+    "action": "count",
+    "text": "273",
+    "value": 1
+  },
+  {
+    "name": "nodeList attributeList optionalValueList charpage",
+    "action": "count",
+    "text": "349",
+    "value": 1
+  },
+  {
+    "name": "nodeList attributeList optionalValueList charpage",
+    "action": "count",
+    "text": "366",
+    "value": 1
+  },
+  {
+    "name": "nodeList attributeList optionalValueList charpage",
+    "action": "count",
+    "text": "392",
+    "value": 1
+  },
+  {
+    "name": "edgeList attributeList optionalValueList",
+    "action": "count min",
+    "text": "chars",
+    "value": 2
+  },
+  {
+    "name": "edgeList attributeList optionalValueList",
+    "action": "count max",
+    "text": "chars",
+    "value": 2
+  },
+  {
+    "name": "edgeList attributeList optionalValueList",
+    "action": "count median",
+    "text": "chars",
+    "value": 2
+  },
+  {
+    "name": "edgeList attributeList optionalValueList",
+    "action": "count quartile first",
+    "text": "chars",
+    "value": 2
+  },
+  {
+    "name": "edgeList attributeList optionalValueList",
+    "action": "count quartile third",
+    "text": "chars",
+    "value": 2
+  },
+  {
+    "name": "edgeList attributeList optionalValueList",
+    "action": "count min",
+    "text": "words",
+    "value": 1
+  },
+  {
+    "name": "edgeList attributeList optionalValueList",
+    "action": "count max",
+    "text": "words",
+    "value": 1
+  },
+  {
+    "name": "edgeList attributeList optionalValueList",
+    "action": "count median",
+    "text": "words",
+    "value": 1
+  },
+  {
+    "name": "edgeList attributeList optionalValueList charpage",
+    "action": "count",
+    "text": "1286",
+    "value": 3
+  },
+  {
+    "name": "attributeMetadataList name",
+    "action": "count min",
+    "text": "chars",
+    "value": 0
+  },
+  {
+    "name": "attributeMetadataList name",
+    "action": "count max",
+    "text": "chars",
+    "value": 16
+  },
+  {
+    "name": "attributeMetadataList name",
+    "action": "count median",
+    "text": "chars",
+    "value": 7.5
+  },
+  {
+    "name": "attributeMetadataList name",
+    "action": "count quartile first",
+    "text": "chars",
+    "value": 4.25
+  },
+  {
+    "name": "attributeMetadataList name",
+    "action": "count quartile third",
+    "text": "chars",
+    "value": 10.75
+  },
+  {
+    "name": "attributeMetadataList name",
+    "action": "count min",
+    "text": "words",
+    "value": 1
+  },
+  {
+    "name": "attributeMetadataList name",
+    "action": "count max",
+    "text": "words",
+    "value": 3
+  },
+  {
+    "name": "attributeMetadataList name",
+    "action": "count median",
+    "text": "words",
+    "value": 1.5
+  },
+  {
+    "name": "attributeMetadataList name charpage",
+    "action": "count",
+    "text": "1",
+    "value": 15
+  },
+  {
+    "name": "attributeMetadataList name charpage",
+    "action": "count",
+    "text": "2",
+    "value": 31
+  },
+  {
+    "name": "attributeMetadataList alternateName",
+    "action": "count min",
+    "text": "chars",
+    "value": 0
+  },
+  {
+    "name": "attributeMetadataList alternateName",
+    "action": "count max",
+    "text": "chars",
+    "value": 5
+  },
+  {
+    "name": "attributeMetadataList alternateName",
+    "action": "count median",
+    "text": "chars",
+    "value": 0
+  },
+  {
+    "name": "attributeMetadataList alternateName",
+    "action": "count quartile first",
+    "text": "chars",
+    "value": 0
+  },
+  {
+    "name": "attributeMetadataList alternateName",
+    "action": "count quartile third",
+    "text": "chars",
+    "value": 1.5
+  },
+  {
+    "name": "attributeMetadataList alternateName",
+    "action": "count min",
+    "text": "words",
+    "value": 1
+  },
+  {
+    "name": "attributeMetadataList alternateName",
+    "action": "count max",
+    "text": "words",
+    "value": 1
+  },
+  {
+    "name": "attributeMetadataList alternateName",
+    "action": "count median",
+    "text": "words",
+    "value": 1
+  },
+  {
+    "name": "attributeMetadataList alternateName charpage",
+    "action": "count",
+    "text": "1",
+    "value": 2
+  },
+  {
+    "name": "attributeMetadataList alternateName charpage",
+    "action": "count",
+    "text": "2",
+    "value": 3
+  },
+  {
+    "name": "attributeMetadataList alternateName charpage",
+    "action": "count",
+    "text": "243",
+    "value": 1
+  },
+  {
+    "name": "attributeMetadataList alternateName charpage",
+    "action": "count",
+    "text": "369",
+    "value": 1
+  }
+]
