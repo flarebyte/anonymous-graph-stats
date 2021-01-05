@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Anonymous statistics for graph objects in Typescript",
   "license": "MIT",
   "main": "dist/index.js",
@@ -39,7 +39,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "anonymous-graph-stats",
+  "name": "@olih/anonymous-graph-stats",
   "author": "Olivier Huin",
   "module": "dist/anonymous-graph-stats.esm.js",
   "size-limit": [
