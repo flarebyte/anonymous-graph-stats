@@ -6,7 +6,10 @@
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
-    "src"
+    "src",
+    "TSDX-README.md",
+    "yarn.lock",
+    "tsconfig.json"
   ],
   "engines": {
     "node": ">=10"
