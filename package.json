@@ -20,12 +20,14 @@
     "fix": "tsdx lint --fix",
     "prepare": "tsdx build",
     "size": "size-limit",
-    "analyze": "size-limit --why"
+    "analyze": "size-limit --why",
+    "release": "np"
   },
   "peerDependencies": {},
   "husky": {
     "hooks": {
-      "pre-commit": "tsdx lint"
+      "pre-commit": "yarn lint && yarn test",
+      "prepublishOnly": "yarn size"
     }
   },
   "prettier": {
@@ -40,11 +42,11 @@
   "size-limit": [
     {
       "path": "dist/anonymous-graph-stats.cjs.production.min.js",
-      "limit": "1 KB"
+      "limit": "3 KB"
     },
     {
       "path": "dist/anonymous-graph-stats.esm.js",
-      "limit": "1 KB"
+      "limit": "3 KB"
     }
   ],
   "devDependencies": {
