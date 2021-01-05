@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Anonymous statistics for graph objects in Typescript",
   "license": "MIT",
   "main": "dist/index.js",
