@@ -54,7 +54,17 @@ interface StatsNameValueMap {
   [name: string]: number;
 }
 
+interface StatsItemDiff {
+  added: StatsItem[];
+  removed: StatsItem[];
+  modified: StatsItem[];
+  identical: StatsItem[];
+  changes: number;
+}
+
 const asc = (a: number, b: number) => a - b;
+
+const parseAsGraph = (content: string): Graph => JSON.parse(content);
 
 const intersection = (a: Set<string>, b: Set<string>) =>
   new Set([...a].filter(x => b.has(x)));
@@ -543,6 +553,9 @@ const validActions = new Set([
 
 const validCustomText = new RegExp('^[A-Za-z0-9 +]{2,30}$').compile();
 
+const makeSimpleId = (item: StatsItem) =>
+  `${item.name}---${item.action}---${item.text}`;
+
 const findDuplicateStrings = (arr: string[]): string[] => {
   const sorted_arr = arr.slice().sort();
   let results = [];
@@ -569,17 +582,14 @@ const validate = (ctx: StatsContext, items: StatsItem[]): string => {
       (validText.has(value.text) || validCustomText.test(value.text))
     );
 
-  const glueStatsItem = (value: StatsItem): string =>
-    `${value.name}---${value.action}---${value.text}`;
-
   const invalidItems = items.filter(validateStatsItem);
   const invalidItemCount = invalidItems.length;
   if (invalidItemCount > 0) {
-    const invalidInfo = invalidItems.map(glueStatsItem).join(';');
+    const invalidInfo = invalidItems.map(makeSimpleId).join(';');
     return `Found ${invalidItemCount} invalid items --> ${invalidInfo}`;
   }
 
-  const statsKeys = items.map(glueStatsItem);
+  const statsKeys = items.map(makeSimpleId);
   const uniqSize = new Set(statsKeys).size;
 
   if (uniqSize !== items.length) {
@@ -591,4 +601,35 @@ const validate = (ctx: StatsContext, items: StatsItem[]): string => {
   return '';
 };
 
-export { getStats, toCSV, fromCSV, validate, Graph, StatsContext };
+const itemToMap = (keyNumber: StatsNameValueMap, item: StatsItem) => {
+  keyNumber[makeSimpleId(item)] = item.value;
+  return keyNumber;
+};
+const fromStatsItemListToMap = (items: StatsItem[]): StatsNameValueMap =>
+  items.reduce(itemToMap, {});
+
+const compareStats = (ref: StatsItem[], other: StatsItem[]): StatsItemDiff => {
+  const refMap = fromStatsItemListToMap(ref);
+  const otherMap = fromStatsItemListToMap(other);
+
+  const added = other.filter(item => !(makeSimpleId(item) in refMap));
+  const removed = ref.filter(item => !(makeSimpleId(item) in otherMap));
+  const possiblyModified = other.filter(item => makeSimpleId(item) in refMap);
+  const identical = possiblyModified.filter(
+    item => refMap[makeSimpleId(item)] === item.value
+  );
+  const modified = possiblyModified.filter(
+    item => refMap[makeSimpleId(item)] !== item.value
+  );
+  const changes = added.length + removed.length + modified.length;
+
+  return {
+    added,
+    removed,
+    modified,
+    identical,
+    changes,
+  };
+};
+
+export { getStats, toCSV, fromCSV, validate, compareStats, parseAsGraph };
