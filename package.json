@@ -39,7 +39,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@olih/anonymous-graph-stats",
+  "name": "anonymous-graph-stats",
   "author": "Olivier Huin",
   "module": "dist/anonymous-graph-stats.esm.js",
   "size-limit": [
