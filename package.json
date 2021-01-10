@@ -1,6 +1,6 @@
 {
-  "version": "0.1.0",
-  "description": "Management of graphs and networks in oak format in Typescript",
+  "version": "0.2.0",
+  "description": "Anonymous statistics for graph objects in Typescript",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -39,16 +39,16 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "oak-graph",
+  "name": "anonymous-graph-stats",
   "author": "Olivier Huin",
-  "module": "dist/oak-graph.esm.js",
+  "module": "dist/anonymous-graph-stats.esm.js",
   "size-limit": [
     {
-      "path": "dist/oak-graph.cjs.production.min.js",
+      "path": "dist/anonymous-graph-stats.cjs.production.min.js",
       "limit": "3 KB"
     },
     {
-      "path": "dist/oak-graph.esm.js",
+      "path": "dist/anonymous-graph-stats.esm.js",
       "limit": "3 KB"
     }
   ],
